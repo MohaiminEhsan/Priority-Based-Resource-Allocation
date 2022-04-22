@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="cologne.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="cologne2.net.xml"/>
+    </output>
+
+    <edge_removal>
+        <keep-edges.input-file value="cologne_comp5.txt"/>
+    </edge_removal>
+
+</configuration>
