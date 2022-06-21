@@ -1,0 +1,155 @@
+OMNeT++ Discrete Event Simulation  (C) 1992-2019 Andras Varga, OpenSim Ltd.
+Version: 5.5.1, build: 190613-08ba16f914, edition: Academic Public License -- NOT FOR COMMERCIAL USE
+See the license for distribution terms and warranty disclaimer
+
+Setting up Cmdenv...
+
+Loading NED files from .:  1
+Loading NED files from ../../src/veins:  41
+Loading NED files from /home/mohaimin/Downloads/veins/project2/veins-cdt/examples/veins:  1
+
+Preparing for running configuration WithChannelSwitching, run #0...
+Redirecting output to file "results/WithChannelSwitching-#0.out"...
+wsm id: 1803  Vehicle ID:  39
+Vehicle- 39 's Request Will be put to a queue. 
+ Lower Priority. 
+VID: '	39
+ID: (omnetpp::cModule)rsu[3]
+QHigh: 	39	208	RequestedResource
+QMid: 
+QLow: 
+
+wsm id: 1818  Vehicle ID:  39
+Vehicle- 39 's Request Will be put to a queue. 
+ Lower Priority. 
+VID: '	39
+ID: (omnetpp::cModule)rsu[4]
+QHigh: 
+QMid: 
+QLow: 
+
+wsm id: 4918  Vehicle ID:  117
+Vehicle- 117 's Request Will be put to a queue. 
+ Lower Priority. 
+VID: u	117
+ID: (omnetpp::cModule)rsu[4]
+QHigh: 	117	313	RequestedResource
+QMid: 
+QLow: 
+
+wsm id: 4921  Vehicle ID:  117
+Vehicle- 117 's Request Will be put to a queue. 
+ Lower Priority. 
+VID: u	117
+Checked started!!
+Sorting done!!!!!!!!!!!!!!!!!!
+ID: (omnetpp::cModule)rsu[3]
+QHigh: 	39	208	RequestedResource	117	313	RequestedResource
+QMid: 
+QLow: 
+
+wsm id: 9865  Vehicle ID:  207
+Vehicle- 207 's Request Deadline is already gone, no point now!!!
+ID: (omnetpp::cModule)rsu[4]
+QHigh: 	117	313	RequestedResource
+QMid: 
+QLow: 
+
+wsm id: 9884  Vehicle ID:  207
+Vehicle- 207 's Request Deadline is already gone, no point now!!!
+ID: (omnetpp::cModule)rsu[3]
+QHigh: 	39	208	RequestedResource	117	313	RequestedResource
+QMid: 
+QLow: 
+
+wsm id: 16439  Vehicle ID:  303
+Vehicle- 303 's Request Will be put to a queue. 
+VID: /	303
+Changing
+VID: /	303
+ Higher Priority. 
+VID: /	303
+Checked started!!
+Sorting done!!!!!!!!!!!!!!!!!!
+ID: (omnetpp::cModule)rsu[4]
+QHigh: 	47	146	RequestedResource	117	313	RequestedResource
+QMid: 
+QLow: 
+
+wsm id: 16465  Vehicle ID:  303
+Vehicle- 303 's Request Will be put to a queue. 
+VID: /	303
+Changing
+VID: /	303
+ Higher Priority. 
+VID: /	303
+ID: (omnetpp::cModule)rsu[3]
+QHigh: 	39	208	RequestedResource	117	313	RequestedResource
+QMid: 
+QLow: 	47	146	RequestedResource
+
+wsm id: 24543  Vehicle ID:  399
+Vehicle- 399 's Request Deadline is already gone, no point now!!!
+ID: (omnetpp::cModule)rsu[4]
+QHigh: 	47	146	RequestedResource	117	313	RequestedResource
+QMid: 
+QLow: 
+
+wsm id: 24590  Vehicle ID:  399
+Vehicle- 399 's Request Deadline is already gone, no point now!!!
+ID: (omnetpp::cModule)rsu[3]
+QHigh: 	39	208	RequestedResource	117	313	RequestedResource
+QMid: 
+QLow: 	47	146	RequestedResource
+
+wsm id: 34558  Vehicle ID:  513
+Vehicle- 513 's Request Deadline is already gone, no point now!!!
+ID: (omnetpp::cModule)rsu[4]
+QHigh: 	47	146	RequestedResource	117	313	RequestedResource
+QMid: 
+QLow: 
+
+wsm id: 34612  Vehicle ID:  513
+Vehicle- 513 's Request Deadline is already gone, no point now!!!
+ID: (omnetpp::cModule)rsu[3]
+QHigh: 	39	208	RequestedResource	117	313	RequestedResource
+QMid: 
+QLow: 	47	146	RequestedResource
+
+wsm id: 52641  Vehicle ID:  699
+Vehicle- 699 's Request Deadline is already gone, no point now!!!
+ID: (omnetpp::cModule)rsu[4]
+QHigh: 	47	146	RequestedResource	117	313	RequestedResource
+QMid: 
+QLow: 
+
+wsm id: 61163  Vehicle ID:  801
+Vehicle- 801 's Request Deadline is already gone, no point now!!!
+ID: (omnetpp::cModule)rsu[4]
+QHigh: 	47	146	RequestedResource	117	313	RequestedResource
+QMid: 
+QLow: 
+
+wsm id: 68457  Vehicle ID:  873
+Vehicle- 873 's Request Deadline is already gone, no point now!!!
+ID: (omnetpp::cModule)rsu[4]
+QHigh: 	47	146	RequestedResource	117	313	RequestedResource
+QMid: 
+QLow: 
+
+wsm id: 75467  Vehicle ID:  933
+Vehicle- 933 's Request Deadline is already gone, no point now!!!
+ID: (omnetpp::cModule)rsu[4]
+QHigh: 	47	146	RequestedResource	117	313	RequestedResource
+QMid: 
+QLow: 
+
+wsm id: 82496  Vehicle ID:  1005
+Vehicle- 1005 's Request Deadline is already gone, no point now!!!
+ID: (omnetpp::cModule)rsu[4]
+QHigh: 	47	146	RequestedResource	117	313	RequestedResource
+QMid: 
+QLow: 
+
+
+End.
