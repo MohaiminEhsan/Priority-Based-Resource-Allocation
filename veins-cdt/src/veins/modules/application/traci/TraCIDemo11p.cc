@@ -25,6 +25,7 @@
 #include "veins/modules/application/traci/Registry.h"
 
 #include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
+#include "veins/modules/application/traci/TraCIDemoRSU11p.h"
 #include "veins/modules/application/traci/constants.h"
 #include "veins/base/utils/Coord.h"
 
@@ -38,6 +39,8 @@
 #include <vector>
 #include <iterator>
 #include <list>
+#include <sstream>
+#include <fstream>
 
 
 
@@ -47,6 +50,23 @@
 using namespace std;
 
 using namespace veins;
+
+
+
+// Result Analysis Works Start
+
+//ifstream fin("Result.txt");
+
+
+
+std::string varName;
+double value;
+double MessageCount=0;
+double RecievedMessage;
+
+
+
+// Result Analysis Works End
 
 
 // For updating the registry
@@ -113,6 +133,8 @@ void printList(std::list<int> const &list)
 }
 
 
+
+
 void TraCIDemo11p::initialize(int stage)
 {
     DemoBaseApplLayer::initialize(stage);
@@ -149,13 +171,21 @@ void TraCIDemo11p::onWSM(BaseFrame1609_4* frame)
     //std::cout<<"WSM"<<std::endl;
     TraCIDemo11pMessage* wsm = check_and_cast<TraCIDemo11pMessage*>(frame);
 
+
+
     findHost()->getDisplayString().setTagArg("i", 1, "green");
 
     Coord VehicleCoord = mobility->getPositionAt(simTime());
 
+    if (wsm->getRSUSelfMessage()==true)
+                {
+                    std::cout<< "RSU Self message"<<std::endl;
+                    return;
+                }
 
     if (wsm->getNodeID() != mac->getMACAddress())
     {
+
         //std::cout<<"Test2"<<std::endl;
         if (mobility->getRoadId()[0] != ':') traciVehicle->changeRoute(wsm->getDemoData(), 9999);
         int hopCounter = wsm->getHopCounter();
@@ -174,8 +204,8 @@ void TraCIDemo11p::onWSM(BaseFrame1609_4* frame)
             AlreadyWithSameMessage = false;
         }
 
-        //if (!sentMessage && AlreadyWithSameMessage == false) {
-        if (!sentMessage) {
+        if (!sentMessage && AlreadyWithSameMessage == false) {
+        //if (!sentMessage) {
             sentMessage = true;
             hopCounter = hopCounter + 1;
             // repeat the received traffic update once in 2 seconds plus some random delay
@@ -206,6 +236,8 @@ void TraCIDemo11p::onWSM(BaseFrame1609_4* frame)
             }*/
 
             //printList(NodeWithMessage);
+            MessageCount++;
+            MessageCountBase++;
             scheduleAt(simTime() + 0.2 + uniform(0.01, 0.2), wsm->dup());
             //cancelAndDelete(wsm);
         }
@@ -216,18 +248,30 @@ void TraCIDemo11p::handleSelfMsg(cMessage* msg)
 {
 
     //std::cout<<"In Self"<<std::endl;
-    bool AlreadyWithSameMessage = false;
 
-    if (std::find(NodeWithMessage.begin(), NodeWithMessage.end(), mac->getMACAddress()) != NodeWithMessage.end())
-        {
-            AlreadyWithSameMessage = true;
-        }
-        else {
-            AlreadyWithSameMessage = false;
-        }
 
 
     if (TraCIDemo11pMessage* wsm = dynamic_cast<TraCIDemo11pMessage*>(msg)) {
+
+
+        if (wsm->getRSUSelfMessage()==true)
+            {
+            std::cout<<"In handle RSU Self"<<std::endl;
+                //sendDown(wsm->dup());
+                //scheduleAt(simTime() + .3 + uniform(0.001, 0.23), wsm->dup());
+                return;
+            }
+
+        bool AlreadyWithSameMessage = false;
+
+        if (std::find(NodeWithMessage.begin(), NodeWithMessage.end(), mac->getMACAddress()) != NodeWithMessage.end())
+            {
+                AlreadyWithSameMessage = true;
+            }
+            else {
+                AlreadyWithSameMessage = false;
+            }
+
         if (AlreadyWithSameMessage == false) {
         //if (AlreadyWithSameMessage == false || AlreadyWithSameMessage == true) {
         //std::cout<<"In Self"<<std::endl;
@@ -282,6 +326,8 @@ void TraCIDemo11p::handleSelfMsg(cMessage* msg)
             }
             else {
                 //printList(NodeWithMessage);
+                MessageCount++;
+                MessageCountBase++;
                 scheduleAt(simTime() + 0.1, wsm);
                 //cancelAndDelete(wsm);
             }
@@ -365,4 +411,6 @@ void TraCIDemo11p::finish()
 {
     //printList(NodeWithMessage);
     DemoBaseApplLayer::finish();
+    std::cout<<"Message Counter: " <<MessageCount<<std::endl;
+
 }

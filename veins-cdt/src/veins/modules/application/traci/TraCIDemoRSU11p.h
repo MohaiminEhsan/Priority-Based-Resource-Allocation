@@ -59,6 +59,11 @@ class VEINS_API TraCIDemoRSU11p : public DemoBaseApplLayer {
 protected:
     void onWSM(BaseFrame1609_4* wsm) override;
     void onWSA(DemoServiceAdvertisment* wsa) override;
+    void handleSelfMsg(cMessage* msg) override;
+    cMessage* QueueHandlingMessage;
+    cMessage* RSUStatusChangeMessage;
+    cMessage* DeleteFromOtherRSUNotification;
+    //void handleSelfMsg(cMessage* msg) override;
     Mac1609_4* mac;
 public:
     int PQ_Size = 30;
@@ -66,11 +71,18 @@ public:
     double DeadLinePercetageThreshold = .60;
     //extern std::list<int> NodeWithMessage;
     int HighPriorityThreshold = 5;
-    queue<tuple<int, double, std::string> > QHigh;
-    queue<tuple<int, double, std::string> > QMid;
-    queue<tuple<int, double, std::string> > QLow;
+    queue<tuple<int, double, std::string, double, int> > QHigh;
+    queue<tuple<int, double, std::string, double, int> > QMid;
+    queue<tuple<int, double, std::string, double, int> > QLow;
     double RSUmaxRange = 500;
+    void initialize(int stage) override;
     void finish() override;
+    void QueueHandling();
+    void ResourceAlllocation();
+    bool RunThread = true;
+    bool RSUBusy = false;
+    double RSUBusyTime = 0;
+
 
     //void printList()
 };

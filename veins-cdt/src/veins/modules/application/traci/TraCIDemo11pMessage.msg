@@ -45,7 +45,9 @@ packet TraCIDemo11pMessage extends BaseFrame1609_4 {
     Coord nodeMobilityNextCoord;
     simtime_t MessageInitTime;
     bool NewMessage = true;
-
+    bool RSUSelfMessage = false;
+	string RSUID;
+	double RSUBusyTime=0;
 
     
 }

@@ -66,7 +66,10 @@ public:
 
     enum DemoApplMessageKinds {
         SEND_BEACON_EVT,
-        SEND_WSA_EVT
+        SEND_WSA_EVT,
+        QUEUE_HANDLING,
+        STATUS_CHANGE,
+        DELETE_REQUEST_FROM_RSU
     };
 
 protected:
