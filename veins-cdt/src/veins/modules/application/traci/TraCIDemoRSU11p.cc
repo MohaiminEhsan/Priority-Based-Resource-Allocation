@@ -37,6 +37,8 @@
 #include <list>
 #include <future>
 #include <unistd.h>
+#include <stdio.h>
+#include <fstream>
 
 using namespace std;
 
@@ -152,7 +154,7 @@ bool DefineDistance(float Distance, double rsuRange)
     }
 }
 
-bool DefineConnection(float connectionStr)
+bool DefineConnection(float connectionStr )
 {
     float ConnectionT = 85;
     connectionStr = abs(connectionStr);
@@ -395,14 +397,45 @@ queue<tuple <int, double, std::string, double, int> >  QueueDeductTimeFromMember
 
 void TraCIDemoRSU11p::QueueHandling()
 {
+    std::list<int> AlreadyExecutedRequest;
+
+    ifstream Vrequestfile ("RSU.txt");
+    std::string line;
+    int VehicleID;
+
+    if (Vrequestfile.is_open())
+    {
+                for(line; getline(Vrequestfile, line);){
+
+                    AlreadyExecutedRequest.push_back(std::stoi(line));
+                }
+
+                Vrequestfile.close();
+    }
+
+
+
 
     if (QHigh.empty()==false){
+        for (auto const& i : AlreadyExecutedRequest) {
+            VehicleID = i;
+            }
+        //std::cout<<"Delete from " <<getParentModule()->getFullPath() << " " << VehicleID << std::endl;
+        QHigh = DeletefromQ(QHigh, VehicleID);
         QHigh = QueueDeductTimeFromMembers(QHigh);
     }
     if (QMid.empty()==false){
+        for (auto const& i : AlreadyExecutedRequest) {
+                VehicleID = i;
+                }
+        QMid = DeletefromQ(QMid, VehicleID);
         QMid = QueueDeductTimeFromMembers(QMid);
     }
     if (QLow.empty()==false){
+        for (auto const& i : AlreadyExecutedRequest) {
+                VehicleID = i;
+                }
+        QLow = DeletefromQ(QLow, VehicleID);
         QLow = QueueDeductTimeFromMembers(QLow);
     }
 
@@ -452,14 +485,92 @@ tuple <int, double, std::string, double, int> VehilceToFirstServe(queue<tuple <i
 }
 
 
+double FindMin(double x, double y, double z){
+  return x < y ? (x < z ? x : z) : (y < z ? y : z);
+}
+
+
+std::string QueueWithLowDeadline(queue<tuple<int, double, std::string, double, int> >QHigh, queue<tuple<int, double, std::string, double, int> > QMid, queue<tuple<int, double, std::string, double, int> > QLow)
+{
+
+    double DeadLineHigh;
+    double DeadLineMid;
+    double DeadLineLow;
+    tuple <int, double, std::string, double, int> TupleHigh;
+    tuple <int, double, std::string, double, int> TupleMid;
+    tuple <int, double, std::string, double, int> TupleLow;
+
+
+    if (QHigh.empty()==false)
+    {
+    TupleHigh = VehilceToFirstServe(QHigh);
+    DeadLineHigh = get<1>(TupleHigh);
+    }
+    else
+    {
+        DeadLineHigh = 9999999999;
+    }
+
+    if (QMid.empty()==false)
+        {
+        TupleMid = VehilceToFirstServe(QMid);
+        DeadLineMid = get<1>(TupleMid);
+        }
+        else
+        {
+            DeadLineMid = 9999999999;
+        }
+
+    if (QLow.empty()==false)
+        {
+        TupleLow = VehilceToFirstServe(QLow);
+        DeadLineLow = get<1>(TupleLow);
+        }
+        else
+        {
+            DeadLineLow = 9999999999;
+        }
+
+    double DeadLineMin = FindMin(DeadLineHigh, DeadLineMid, DeadLineLow);
+
+    std::string Queue= "";
+
+    if (DeadLineHigh == DeadLineMin)
+    {
+        Queue = "High";
+    }
+    else if (DeadLineMid == DeadLineMin)
+    {
+        Queue = "Mid";
+    }
+    else if (DeadLineLow == DeadLineMin)
+    {
+        Queue = "Low";
+    }
+
+    return Queue;
+
+}
+
+
+
 void TraCIDemoRSU11p::ResourceAlllocation()
 {
     int VehicleID;
+    std::string RSUfilename("RSU.txt");
+    ofstream RSUFileOut;
+    RSUFileOut.open(RSUfilename, std::ios_base::app);
     std::string MessageFromVehilceToServe;
     tuple <int, double, std::string, double, int> TupleHigh;
     tuple <int, double, std::string, double, int> TupleMid;
     tuple <int, double, std::string, double, int> TupleLow;
 
+
+    std::string QueueToServe = QueueWithLowDeadline(QHigh, QMid, QLow);
+
+
+ if (QueueToServe == "High")
+ {
 
     if (QHigh.empty()==false){
         TupleHigh = VehilceToFirstServe(QHigh);
@@ -476,22 +587,26 @@ void TraCIDemoRSU11p::ResourceAlllocation()
                 RSUBusyTime = get<4>(TupleHigh);
                 RSUBusy = true;
                 std::string RSUName = getParentModule()->getFullPath();
-                std::string DeleteFromOther = RSUName + " " + std::to_string(VehicleID);
-                //DeleteFromOtherRSUNotification->setName(DeleteFromOther.c_str());
-                //scheduleAt(simTime()+uniform(0.01, 0.5), DeleteFromOtherRSUNotification);
-                //handleSelfMsg(DeleteFromOtherRSUNotification);
 
                 RSUStatusChangeMessage->setName(RSUName.c_str());
                 //std::cout<<get<0>(TupleHigh)<<get<1>(TupleHigh)<<get<2>(TupleHigh)<<get<3>(TupleHigh)<<get<4>(TupleHigh)<<std::endl;
                 QHigh = DeletefromQ(QHigh, VehicleID);
+                if (RSUFileOut.is_open())
+                {
+                    std::string VehicleIDStr =  std::to_string(VehicleID);
+                    RSUFileOut << VehicleIDStr << endl;
+                }
                 MessageFromVehilceToServe = "";
                 VehicleID = 0;
                 scheduleAt(simTime()+RSUBusyTime+uniform(0.05, 1), RSUStatusChangeMessage);
             }
 
-//////////////// Which tuple has lower deadline, otherwise, it will always take from higher queue. lower queue will be abandoned.
         }
         }
+ }
+
+ else if (QueueToServe == "Mid")
+ {
     if (QMid.empty()==false){
         TupleMid = VehilceToFirstServe(QMid);
         MessageFromVehilceToServe = get<2>(TupleMid);
@@ -509,7 +624,12 @@ void TraCIDemoRSU11p::ResourceAlllocation()
                 std::string RSUName = getParentModule()->getFullPath();
                 RSUStatusChangeMessage->setName(RSUName.c_str());
                 //std::cout<<get<0>(TupleMid)<<get<1>(TupleMid)<<get<2>(TupleMid)<<get<3>(TupleMid)<<get<4>(TupleMid)<<std::endl;
-                QMid = DeletefromQ(QMid, VehicleID);
+                QMid = DeletefromQ(QMid, VehicleID);\
+                if (RSUFileOut.is_open())
+                {
+                    std::string VehicleIDStr =  std::to_string(VehicleID);
+                    RSUFileOut << VehicleIDStr << endl;
+                }
                 MessageFromVehilceToServe = "";
                 VehicleID = 0;
                 scheduleAt(simTime()+RSUBusyTime+uniform(0.05, 1), RSUStatusChangeMessage);
@@ -517,6 +637,10 @@ void TraCIDemoRSU11p::ResourceAlllocation()
 
         }
         }
+}
+
+ else if (QueueToServe == "Low")
+ {
     if (QLow.empty()==false){
         TupleLow = VehilceToFirstServe(QLow);
         MessageFromVehilceToServe = get<2>(TupleLow);
@@ -535,6 +659,11 @@ void TraCIDemoRSU11p::ResourceAlllocation()
                 RSUStatusChangeMessage->setName(RSUName.c_str());
                 std::cout<<get<0>(TupleLow)<<get<1>(TupleLow)<<get<2>(TupleLow)<<get<3>(TupleLow)<<get<3>(TupleLow)<<std::endl;
                 QLow = DeletefromQ(QLow, VehicleID);
+                if (RSUFileOut.is_open())
+                {
+                    std::string VehicleIDStr =  std::to_string(VehicleID);
+                    RSUFileOut << VehicleIDStr << endl;
+                }
                 MessageFromVehilceToServe = "";
                 VehicleID = 0;
                 scheduleAt(simTime()+RSUBusyTime+uniform(0.05, 1), RSUStatusChangeMessage);
@@ -542,7 +671,33 @@ void TraCIDemoRSU11p::ResourceAlllocation()
 
         }
         }
+ }
+
+    RSUFileOut.close();
 }
+
+
+
+
+//////////// FCFS for results
+
+void TraCIDemoRSU11p::FCFS(int VehicleID, int ServiceTime, int DeadLine)
+{
+
+    std::string ResultFCFSFileName("ResultAnalysisFCFS.txt");
+    ofstream ResultFCFSFileOut;
+    ResultFCFSFileOut.open(ResultFCFSFileName, std::ios_base::app);
+
+    std::string RSUName = getParentModule()->getFullName();
+    double SimTime = simTime().dbl();
+    ResultFCFSFileOut << VehicleID << " " << SimTime << " " << ServiceTime << " "<< DeadLine << std::endl;
+
+}
+
+
+
+///////////// FCFS ends
+
 
 
 void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
@@ -556,6 +711,8 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
         return;
     }
 
+
+    TraCIDemoRSU11p::FCFS(wsm->getNodeID(), wsm->getServiceTime(),wsm->getTaskDeadline());
 
     RecievedMessageRSU++;
 
@@ -626,11 +783,11 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
 
 
 
-    // For calcualtion of threshold time
+    /*// For calcualtion of threshold time
     if (ActualDeadLine > MaxDeadline)
     {
         MaxDeadline = ActualDeadLine;
-    }
+    }*/
 
 
     simtime_t MessageInitTime = wsm->getMessageInitTime();
@@ -647,7 +804,7 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
     double Deadline = ActualDeadLine;
 
 
-    double MaxWaitTimeDouble = Deadline - ST;
+    double MaxWaitTimeDouble = Deadline - simTime().dbl();
 
     int MaxWaitTime = (int)round(MaxWaitTimeDouble);
 
@@ -671,7 +828,7 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
          tuple <int, double, std::string, double, int> Task;
          std::string RequestedResource = "RequestedResource";
          tuple <int, double, std::string, double, int> Q;
-         Q = make_tuple(VehicleID, MaxWaitTime,RequestedResource, MsgInitTime, ST);
+         Q = make_tuple(VehicleID, MaxWaitTime,RequestedResource, MsgInitTime, 5);
          if (get<0>(Q) != VehicleID)
          {
              //std::cout<<"VID: " << get<0>(Q)<< '\t' << VehicleID<<std::endl;
@@ -680,9 +837,9 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
              //std::cout<<"VID: " << get<0>(Q)<< '\t' << VehicleID<<std::endl;
          }
 
-         if (MaxWaitTime <= MaxDeadline * DeadLinePercetageThreshold)
+         if (MaxWaitTime <= ActualDeadLine * DeadLinePercetageThreshold)
          {
-             std::cout<<" Higher Priority. "<<std::endl;
+             std::cout<<" Higher Priority. "<< SP <<std::endl;
              //std::cout<<"VID: " << get<0>(Q)<< '\t' << VehicleID<<std::endl;
              if (SP==1)
              {
@@ -764,14 +921,14 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
                  }
              }
          }
-         else if (MaxWaitTime > MaxDeadline * DeadLinePercetageThreshold)
+         else if (MaxWaitTime > ActualDeadLine * DeadLinePercetageThreshold)
          {
-             std::cout<<" Lower Priority. "<<std::endl;
+             std::cout<<" Lower Priority. "<< SP << std::endl;
              //std::cout<<"VID: " << get<0>(Q)<< '\t' << VehicleID<<std::endl;
              if (SP==1)
               {
 
-                  if (QHigh.size()!= HighPriorityThreshold)
+                  if (QHigh.size()< HighPriorityThreshold)
                   {
                       if (QHigh.empty()==false){
                       if (QMid.empty()==false){
@@ -809,10 +966,12 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
                   bool inQ = checkinQ(QMid, VehicleID);
                     if (inQ == false)
                     {
+                        std::cout<<"Did not find in queue" <<std::endl;
                         QMid.push(Q);
                         QMid = sortQ(QMid);
                     }
                     else {
+                        std::cout<<"Found in queue" <<std::endl;
                         QMid = replaceinQ(QMid, Q);
                         QMid = sortQ(QMid);
                     }
@@ -825,7 +984,7 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
               else if (SP==2)
               {
 
-                  if (QMid.size()!= HighPriorityThreshold)
+                  if (QMid.size()< HighPriorityThreshold)
                     {
                       if (QMid.empty()==false){
                       if (QHigh.empty()==false){
@@ -838,10 +997,12 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
                       bool inQ = checkinQ(QMid, VehicleID);
                       if (inQ == false)
                       {
+                          std::cout<<"Did not find in queue" <<std::endl;
                           QMid.push(Q);
                           QMid = sortQ(QMid);
                       }
                       else {
+                          std::cout<<"Found in queue" <<std::endl;
                           QMid = replaceinQ(QMid, Q);
                           QMid = sortQ(QMid);
                       }
@@ -862,10 +1023,12 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
                           bool inQ = checkinQ(QLow, VehicleID);
                           if (inQ == false)
                           {
+                              std::cout<<"Did not find in queue" <<std::endl;
                               QLow.push(Q);
                               QLow = sortQ(QLow);
                           }
                           else {
+                              std::cout<<"Found in queue" <<std::endl;
                               QLow = replaceinQ(QLow, Q);
                               QLow = sortQ(QLow);
                           }
@@ -896,6 +1059,9 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
                     QLow = sortQ(QLow);
                 }
                 }
+                  else {
+                      QLow.push(Q);
+                  }
               }
          }
     }
@@ -953,7 +1119,8 @@ void TraCIDemoRSU11p::handleSelfMsg(cMessage* msg)
         //std::cout<< RSUNAME<<std::endl;
         if (RSUNAME == "Initialize")
         {
-            std::cout<<"STATUS_CHANGE_RETURN"<<std::endl;
+            //std::cout<<"STATUS_CHANGE_RETURN from " << getParentModule()<<std::endl;
+            std::cout << getParentModule()<<std::endl;
             return;
         }
         if (RSUNAME == getParentModule()->getFullPath())
@@ -973,7 +1140,7 @@ void TraCIDemoRSU11p::handleSelfMsg(cMessage* msg)
 
         if (MessageBody == "Initialize")
         {
-        std::cout<<"DELETE_REQUEST_FROM_RSU_RETURN"<<std::endl;
+        //std::cout<<"DELETE_REQUEST_FROM_RSU_RETURN"<<std::endl;
         return;
         }
 
@@ -981,7 +1148,7 @@ void TraCIDemoRSU11p::handleSelfMsg(cMessage* msg)
         std::string RSUNAME = MessageBody.substr(0, MessageBody.find(" "));
         std::string VehicleIDStr = MessageBody.substr(MessageBody.find(" ") + 1);
         int VehicleID = std::stoi(VehicleIDStr);
-        std::cout << "DELETE REQUEST FROM OTHER RSU >>> " <<RSUNAME << " " << getParentModule()->getFullPath() << " " << VehicleID << std::endl;
+        //std::cout << "DELETE REQUEST FROM OTHER RSU >>> " <<RSUNAME << " " << getParentModule()->getFullPath() << " " << VehicleID << std::endl;
         scheduleAt(simTime()+5+uniform(0.05, 1), msg);
         //if (RSUNAME != getParentModule()->getFullPath())
 
@@ -1006,6 +1173,8 @@ void TraCIDemoRSU11p::finish(){
     std::cout<<"RecievedMessage: " << RecievedMessageRSU<<std::endl;
 
 
+        remove("RSU.txt");
+
 
         std::cout<<"QHigh: ";
         showq(QHigh);
@@ -1014,8 +1183,8 @@ void TraCIDemoRSU11p::finish(){
         std::cout<<"QLow: ";
         showq(QLow);
         std::cout<<std::endl;
-
-
+        //system("python3 FCFS.py");
+        //remove("ResultAnalysisFCFS.txt");
 
 
 }

@@ -143,8 +143,8 @@ void TraCIDemo11p::initialize(int stage)
         lastDroveAt = simTime();
         currentSubscribedServiceId = -1;
         stage ++;
-        TaskDeadline = RandomNumberGenerator(100,600);
-        ServiceTime = RandomNumberGenerator(0,TaskDeadline);
+        TaskDeadline = RandomNumberGenerator(500,1000);
+        ServiceTime = RandomNumberGenerator(50,0.25*TaskDeadline);
 
     }
 

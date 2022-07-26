@@ -66,19 +66,25 @@ protected:
     //void handleSelfMsg(cMessage* msg) override;
     Mac1609_4* mac;
 public:
-    int PQ_Size = 30;
-    int MaxDeadline = 50;
+    //int MaxDeadline = 50;
     double DeadLinePercetageThreshold = .60;
+
+
+    // Check Function DefineDistance and DefinceConnetion to find out which distance is what?
+
+
+
     //extern std::list<int> NodeWithMessage;
     int HighPriorityThreshold = 5;
     queue<tuple<int, double, std::string, double, int> > QHigh;
     queue<tuple<int, double, std::string, double, int> > QMid;
     queue<tuple<int, double, std::string, double, int> > QLow;
-    double RSUmaxRange = 500;
+    double RSUmaxRange = 500; // This is for determining if the Vehicle's next poistion is in RSU range or not.
     void initialize(int stage) override;
     void finish() override;
     void QueueHandling();
     void ResourceAlllocation();
+    void FCFS(int VehicleID, int ServiceTime, int DeadLine);
     bool RunThread = true;
     bool RSUBusy = false;
     double RSUBusyTime = 0;
