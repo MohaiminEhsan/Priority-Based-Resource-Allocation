@@ -62,6 +62,9 @@ public:
     void initialize(int stage) override;
     void finish() override;
 
+    double MessageCountBase;
+    double RecievedMessageBase;
+
     void receiveSignal(cComponent* source, simsignal_t signalID, cObject* obj, cObject* details) override;
 
     enum DemoApplMessageKinds {

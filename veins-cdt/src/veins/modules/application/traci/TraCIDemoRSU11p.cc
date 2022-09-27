@@ -56,6 +56,75 @@ double valueRSU;
 double MessageCountRSU;
 double RecievedMessageRSU=0;
 
+///////////////////////// Fuzzification
+class CFuzzyFunction
+{
+protected :
+    double dLeft, dRight;
+    char   cType;
+    char*  sName;
+
+public:
+    CFuzzyFunction(){};
+    virtual ~CFuzzyFunction(){ delete [] sName; sName=NULL;}
+
+    virtual void    setInterval(double l,   double r)
+    {dLeft=l; dRight=r;}
+
+    virtual void    setMiddle( double dL=0, double dR=0)=0;
+
+    virtual void    setType(char c)
+    { cType=c;}
+
+    virtual void    setName(const char* s)
+    {
+      sName = new char[strlen(s)+1];
+      strcpy(sName,s);
+    }
+
+    bool    isDotInInterval(double t)
+    {
+        if((t>=dLeft)&&(t<=dRight)) return true; else return false;
+    }
+
+    char getType(void)const{ return cType;}
+
+        void    getName() const
+    {
+        cout<<sName<<endl;
+    }
+
+    virtual double getValue(double t)=0;
+};
+
+
+
+class CTrapezoid : public CFuzzyFunction
+{
+private:
+    double dLeftMiddle, dRightMiddle;
+
+public:
+    void    setMiddle(double dL, double dR)
+    {
+        dLeftMiddle=dL; dRightMiddle=dR;
+    }
+
+    double  getValue(double t)
+    {
+        if(t<=dLeft)
+           return 0;
+        else if(t<dLeftMiddle)
+            return (t-dLeft)/(dLeftMiddle-dLeft);
+        else if(t<=dRightMiddle)
+            return 1.0;
+        else if(t<dRight)
+            return (dRight-t)/(dRight-dRightMiddle);
+        else
+            return 0;
+    }
+};
+
 
 
 
@@ -141,8 +210,35 @@ int SubPriotizationFunction(bool Distance, bool Connection, bool InRSURange)
     return SP;
 }
 
+
+
+/////Fuzzy
+int FuzzyAlgo(float Distance, double rsuRange)
+{
+    double dmid=rsuRange/2;
+    double dlend=(0.6666*rsuRange);
+    double drstart=(0.3333*rsuRange);
+    CFuzzyFunction *FuzzySet[2];
+    FuzzySet[0] = new CTrapezoid;
+    FuzzySet[1] = new CTrapezoid;
+    //FuzzySet[2] = new CTrapezoid;
+
+    FuzzySet[0]->setInterval(1,500);
+    FuzzySet[0]->setMiddle(1,dlend);
+    //FuzzySet[0]->setType('r');
+    FuzzySet[0]->setName("good_distance");
+
+    FuzzySet[1]->setInterval(dmid,500);
+    FuzzySet[1]->setMiddle(drstart,500);
+    //FuzzySet[1]->setType('r');
+    FuzzySet[1]->setName("bad_distance");
+
+}
+
+
 bool DefineDistance(float Distance, double rsuRange)
 {
+
     float DistanceT = 0.50;
     if (Distance <= DistanceT * rsuRange)
     {
@@ -629,6 +725,7 @@ void TraCIDemoRSU11p::ResourceAlllocation()
                 {
                     std::string VehicleIDStr =  std::to_string(VehicleID);
                     RSUFileOut << VehicleIDStr << endl;
+
                 }
                 MessageFromVehilceToServe = "";
                 VehicleID = 0;
@@ -663,7 +760,9 @@ void TraCIDemoRSU11p::ResourceAlllocation()
                 {
                     std::string VehicleIDStr =  std::to_string(VehicleID);
                     RSUFileOut << VehicleIDStr << endl;
+
                 }
+
                 MessageFromVehilceToServe = "";
                 VehicleID = 0;
                 scheduleAt(simTime()+RSUBusyTime+uniform(0.05, 1), RSUStatusChangeMessage);
@@ -754,6 +853,7 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
     Coord vhNextCoord = wsm->getNodeMobilityNextCoord();
 
     int VehicleID = wsm->getNodeID();
+    std::cout<<"  TEST Vehicle ID:  "<< wsm->getNodeID()<<std::endl;
     //std::cout<<"Message Reached at << " << simTime() <<std::endl;
     std::cout<<"wsm id: "<< wsm->getId()<< "  Vehicle ID:  "<< VehicleID<<std::endl;
     //std::cout<<"wsm TaskDeadline: "<< wsm->getTaskDeadline()<< "  ServiceTime:  "<< wsm->getServiceTime()<<std::endl;
@@ -828,7 +928,7 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
          tuple <int, double, std::string, double, int> Task;
          std::string RequestedResource = "RequestedResource";
          tuple <int, double, std::string, double, int> Q;
-         Q = make_tuple(VehicleID, MaxWaitTime,RequestedResource, MsgInitTime, 5);
+         Q = make_tuple(VehicleID, MaxWaitTime,RequestedResource, MsgInitTime, ST);
          if (get<0>(Q) != VehicleID)
          {
              //std::cout<<"VID: " << get<0>(Q)<< '\t' << VehicleID<<std::endl;

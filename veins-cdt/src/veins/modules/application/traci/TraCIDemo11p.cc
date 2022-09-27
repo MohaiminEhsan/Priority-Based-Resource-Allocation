@@ -44,9 +44,6 @@
 
 
 
-
-
-
 using namespace std;
 
 using namespace veins;
@@ -144,7 +141,7 @@ void TraCIDemo11p::initialize(int stage)
         currentSubscribedServiceId = -1;
         stage ++;
         TaskDeadline = RandomNumberGenerator(500,1000);
-        ServiceTime = RandomNumberGenerator(50,0.25*TaskDeadline);
+        ServiceTime = RandomNumberGenerator(50,TaskDeadline);
 
     }
 
@@ -213,7 +210,7 @@ void TraCIDemo11p::onWSM(BaseFrame1609_4* frame)
             //std::cout<<"VehicleID2: "<< mobility->getId()<<std::endl;
             //wsm->setNodeID(mobility->getId());
             wsm->setNodeID(mac->getMACAddress());
-
+            //std::cout<<"test:::::::::::::::::::::: "<<wsm->getNodeID()<<" " << mac->getMACAddress() << " " << mobility->getId() << " " << std::endl;
             NodeWithMessage.push_back(mac->getMACAddress());
             //std::cout<<mobility->getId()<<std::endl;
             wsm->setTaskDeadline(TaskDeadline);

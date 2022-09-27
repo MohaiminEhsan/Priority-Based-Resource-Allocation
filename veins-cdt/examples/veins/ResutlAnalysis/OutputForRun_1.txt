@@ -1,0 +1,504 @@
+OMNeT++ Discrete Event Simulation  (C) 1992-2019 Andras Varga, OpenSim Ltd.
+Version: 5.5.1, build: 190613-08ba16f914, edition: Academic Public License -- NOT FOR COMMERCIAL USE
+See the license for distribution terms and warranty disclaimer
+
+Setting up Cmdenv...
+
+Loading NED files from .:  1
+Loading NED files from ../../src/veins:  41
+Loading NED files from /home/mohaimin/Downloads/veins/project2/veins-cdt/examples/veins:  1
+
+Preparing for running configuration WithChannelSwitching, run #0...
+Assigned runID=WithChannelSwitching-0-20220923-11:25:44-3186
+Setting up network "RSUExampleScenario"...
+Initializing...
+
+Running simulation...
+** Event #0   t=0   Elapsed: 2.4e-05s (0m 00s)  0% completed  (0% total)
+     Speed:     ev/sec=0   simsec/sec=0   ev/simsec=0
+     Messages:  created: 87   present: 87   in FES: 18
+(omnetpp::cModule)rsu[3]
+(omnetpp::cModule)rsu[2]
+(omnetpp::cModule)rsu[1]
+(omnetpp::cModule)rsu[0]
+(omnetpp::cModule)rsu[4]
+** Event #256   t=2.250267531901   Elapsed: 2.28247s (0m 02s)  0% completed  (0% total)
+     Speed:     ev/sec=112.598   simsec/sec=0.985897   ev/simsec=114.209
+     Messages:  created: 106   present: 106   in FES: 13
+  TEST Vehicle ID:  39
+wsm id: 1813  Vehicle ID:  39
+Vehicle- 39 's Request Will be put to a queue. 
+ Lower Priority. 1
+ID: RSUExampleScenario.rsu[3]
+QHigh: 	39	807	RequestedResource	84.1738	602---->
+QMid: 
+QLow: 
+
+  TEST Vehicle ID:  39
+wsm id: 1828  Vehicle ID:  39
+Vehicle- 39 's Request Will be put to a queue. 
+ Lower Priority. 3
+ID: RSUExampleScenario.rsu[4]
+QHigh: 
+QMid: 
+QLow: 	39	807	RequestedResource	84.1738	602---->
+
+~~~~~~~~Vehicle to Service now - 39
+RSUExampleScenario.rsu[3]
+~~~~~~~~~~~RSU will be busy for 602 FROM TIME - 88.331999086054
+  TEST Vehicle ID:  117
+wsm id: 4900  Vehicle ID:  117
+Vehicle- 117 's Request Will be put to a queue. 
+ Lower Priority. 1
+ID: RSUExampleScenario.rsu[4]
+QHigh: 	117	707	RequestedResource	120.288	596---->
+QMid: 
+QLow: 
+
+  TEST Vehicle ID:  117
+wsm id: 4903  Vehicle ID:  117
+Vehicle- 117 's Request Will be put to a queue. 
+ Lower Priority. 1
+ID: RSUExampleScenario.rsu[3]
+QHigh: 	117	707	RequestedResource	120.288	596---->
+QMid: 
+QLow: 
+
+~~~~~~~~Vehicle to Service now - 117
+RSUExampleScenario.rsu[4]
+~~~~~~~~~~~RSU will be busy for 596 FROM TIME - 122.783755099725
+** Event #100608   t=154.00006504664   Elapsed: 3.28616s (0m 03s)  15% completed  (15% total)
+     Speed:     ev/sec=99983.6   simsec/sec=151.193   ev/simsec=661.299
+     Messages:  created: 9165   present: 4990   in FES: 69
+  TEST Vehicle ID:  201
+wsm id: 9624  Vehicle ID:  201
+Vehicle- 201 's Request Will be put to a queue. 
+ Lower Priority. 1
+ID: RSUExampleScenario.rsu[4]
+QHigh: 	201	502	RequestedResource	159.097	163---->
+QMid: 
+QLow: 
+
+  TEST Vehicle ID:  201
+wsm id: 9639  Vehicle ID:  201
+Vehicle- 201 's Request Will be put to a queue. 
+ Lower Priority. 3
+ID: RSUExampleScenario.rsu[3]
+QHigh: 
+QMid: 
+QLow: 	201	502	RequestedResource	159.097	163---->
+
+  TEST Vehicle ID:  303
+wsm id: 16647  Vehicle ID:  303
+Vehicle- 303 's Request Will be put to a queue. 
+ Lower Priority. 1
+Checked started!!
+Did not find in queue
+ID: RSUExampleScenario.rsu[4]
+QHigh: 	303	421	RequestedResource	207.276	189---->	201	457	RequestedResource	159.097	163---->
+QMid: 
+QLow: 
+
+  TEST Vehicle ID:  303
+wsm id: 16676  Vehicle ID:  303
+Vehicle- 303 's Request Will be put to a queue. 
+ Lower Priority. 3
+Checked started!!
+ID: RSUExampleScenario.rsu[3]
+QHigh: 
+QMid: 
+QLow: 	303	421	RequestedResource	207.276	189---->	201	462	RequestedResource	159.097	163---->
+
+** Event #211200   t=227.050175393378   Elapsed: 4.29874s (0m 04s)  22% completed  (22% total)
+     Speed:     ev/sec=109219   simsec/sec=72.1429   ev/simsec=1513.92
+     Messages:  created: 21998   present: 10125   in FES: 93
+  TEST Vehicle ID:  399
+wsm id: 24696  Vehicle ID:  399
+Vehicle- 399 's Request Will be put to a queue. 
+ Higher Priority. 1
+Checked started!!
+ID: RSUExampleScenario.rsu[4]
+QHigh: 	399	349	RequestedResource	256.762	254---->	303	376	RequestedResource	207.276	189---->	201	412	RequestedResource	159.097	163---->
+QMid: 
+QLow: 
+
+  TEST Vehicle ID:  399
+wsm id: 24740  Vehicle ID:  399
+Vehicle- 399 's Request Will be put to a queue. 
+ Higher Priority. 3
+Checked started!!
+ID: RSUExampleScenario.rsu[3]
+QHigh: 
+QMid: 
+QLow: 	399	349	RequestedResource	256.762	254---->	303	376	RequestedResource	207.276	189---->	201	417	RequestedResource	159.097	163---->
+
+** Event #314880   t=280.900156024426   Elapsed: 5.29883s (0m 05s)  28% completed  (28% total)
+     Speed:     ev/sec=103670   simsec/sec=53.8448   ev/simsec=1925.35
+     Messages:  created: 31802   present: 14961   in FES: 111
+Message Counter: 79
+Message Counter: 79
+Message Counter: 79
+  TEST Vehicle ID:  513
+wsm id: 35136  Vehicle ID:  513
+Vehicle- 513 ST: 612 WT: 442Deadline: 752
+Vehicle- 513 's Request Deadline is already gone, no point now!!!
+ID: RSUExampleScenario.rsu[4]
+QHigh: 	399	299	RequestedResource	256.762	254---->	303	326	RequestedResource	207.276	189---->	201	362	RequestedResource	159.097	163---->
+QMid: 
+QLow: 
+
+  TEST Vehicle ID:  513
+wsm id: 35187  Vehicle ID:  513
+Vehicle- 513 ST: 612 WT: 442Deadline: 752
+Vehicle- 513 's Request Deadline is already gone, no point now!!!
+ID: RSUExampleScenario.rsu[3]
+QHigh: 
+QMid: 
+QLow: 	399	299	RequestedResource	256.762	254---->	303	326	RequestedResource	207.276	189---->	201	367	RequestedResource	159.097	163---->
+
+  TEST Vehicle ID:  519
+wsm id: 36224  Vehicle ID:  519
+Vehicle- 519 's Request Will be put to a queue. 
+ Lower Priority. 2
+ID: RSUExampleScenario.rsu[4]
+QHigh: 	399	299	RequestedResource	256.762	254---->	303	326	RequestedResource	207.276	189---->	201	362	RequestedResource	159.097	163---->
+QMid: 	519	528	RequestedResource	310.378	464---->
+QLow: 
+
+  TEST Vehicle ID:  519
+wsm id: 36269  Vehicle ID:  519
+Vehicle- 519 's Request Will be put to a queue. 
+ Lower Priority. 3
+Checked started!!
+ID: RSUExampleScenario.rsu[3]
+QHigh: 
+QMid: 
+QLow: 	399	299	RequestedResource	256.762	254---->	303	326	RequestedResource	207.276	189---->	201	367	RequestedResource	159.097	163---->	519	528	RequestedResource	310.378	464---->
+
+Message Counter: 98
+Message Counter: 98
+Message Counter: 98
+Message Counter: 98
+Message Counter: 98
+Message Counter: 98
+** Event #416256   t=325.950181917965   Elapsed: 6.2989s (0m 06s)  32% completed  (32% total)
+     Speed:     ev/sec=101369   simsec/sec=45.0469   ev/simsec=2250.3
+     Messages:  created: 41909   present: 19542   in FES: 117
+Message Counter: 98
+Message Counter: 111
+Message Counter: 111
+Message Counter: 111
+Message Counter: 111
+Message Counter: 111
+Message Counter: 111
+Message Counter: 111
+Message Counter: 111
+** Event #518400   t=371.050177261829   Elapsed: 7.30016s (0m 07s)  37% completed  (37% total)
+     Speed:     ev/sec=102015   simsec/sec=45.0431   ev/simsec=2264.83
+     Messages:  created: 50453   present: 24374   in FES: 123
+Message Counter: 111
+Message Counter: 111
+Message Counter: 111
+Message Counter: 111
+Message Counter: 111
+Message Counter: 111
+Message Counter: 111
+Message Counter: 111
+  TEST Vehicle ID:  705
+wsm id: 54032  Vehicle ID:  705
+Vehicle- 705 ST: 751 WT: 596Deadline: 997
+Vehicle- 705 's Request Deadline is already gone, no point now!!!
+ID: RSUExampleScenario.rsu[4]
+QHigh: 	399	214	RequestedResource	256.762	254---->	303	241	RequestedResource	207.276	189---->	201	277	RequestedResource	159.097	163---->
+QMid: 	519	443	RequestedResource	310.378	464---->
+QLow: 
+
+Message Counter: 130
+Message Counter: 130
+Message Counter: 130
+Message Counter: 130
+** Event #630784   t=418.050250194494   Elapsed: 8.30195s (0m 08s)  41% completed  (41% total)
+     Speed:     ev/sec=112183   simsec/sec=46.9161   ev/simsec=2391.15
+     Messages:  created: 60321   present: 29505   in FES: 127
+Message Counter: 130
+Message Counter: 130
+Message Counter: 130
+Message Counter: 130
+Message Counter: 130
+Message Counter: 130
+Message Counter: 130
+Message Counter: 130
+Message Counter: 130
+  TEST Vehicle ID:  807
+wsm id: 63886  Vehicle ID:  807
+Vehicle- 807 's Request Will be put to a queue. 
+ Higher Priority. 3
+ID: RSUExampleScenario.rsu[4]
+QHigh: 	399	174	RequestedResource	256.762	254---->	303	201	RequestedResource	207.276	189---->	201	237	RequestedResource	159.097	163---->
+QMid: 	519	403	RequestedResource	310.378	464---->
+QLow: 	807	247	RequestedResource	447.879	76---->
+
+Message Counter: 146
+Message Counter: 146
+** Event #738304   t=462.100031797122   Elapsed: 9.30616s (0m 09s)  46% completed  (46% total)
+     Speed:     ev/sec=107070   simsec/sec=43.8653   ev/simsec=2440.87
+     Messages:  created: 69837   present: 34411   in FES: 130
+Message Counter: 146
+Message Counter: 146
+Message Counter: 146
+Message Counter: 146
+Message Counter: 146
+  TEST Vehicle ID:  903
+wsm id: 72138  Vehicle ID:  903
+Vehicle- 903 's Request Will be put to a queue. 
+ Higher Priority. 3
+Checked started!!
+ID: RSUExampleScenario.rsu[4]
+QHigh: 	399	149	RequestedResource	256.762	254---->	303	176	RequestedResource	207.276	189---->	201	212	RequestedResource	159.097	163---->
+QMid: 	519	378	RequestedResource	310.378	464---->
+QLow: 	807	222	RequestedResource	447.879	76---->	903	233	RequestedResource	479.381	223---->
+
+Message Counter: 158
+Message Counter: 158
+Message Counter: 158
+** Event #824320   t=496.050056619663   Elapsed: 10.3096s (0m 10s)  49% completed  (49% total)
+     Speed:     ev/sec=85720.1   simsec/sec=33.8332   ev/simsec=2533.61
+     Messages:  created: 77229   present: 38385   in FES: 134
+Message Counter: 170
+Message Counter: 170
+Message Counter: 170
+Message Counter: 170
+Message Counter: 170
+Message Counter: 170
+Message Counter: 170
+Message Counter: 170
+Message Counter: 170
+Message Counter: 170
+Message Counter: 170
+Message Counter: 170
+Message Counter: 170
+** Event #923904   t=534.050258252554   Elapsed: 11.3102s (0m 11s)  53% completed  (53% total)
+     Speed:     ev/sec=99521.8   simsec/sec=37.9765   ev/simsec=2620.62
+     Messages:  created: 85483   present: 42899   in FES: 133
+Message Counter: 170
+Message Counter: 170
+Message Counter: 170
+Message Counter: 170
+Message Counter: 180
+Message Counter: 180
+Message Counter: 180
+** Event #1018880   t=571.050201074512   Elapsed: 12.3314s (0m 12s)  57% completed  (57% total)
+     Speed:     ev/sec=93009.6   simsec/sec=36.2339   ev/simsec=2566.92
+     Messages:  created: 92850   present: 47369   in FES: 140
+Message Counter: 180
+Message Counter: 180
+Message Counter: 180
+Message Counter: 180
+Message Counter: 180
+Message Counter: 194
+Message Counter: 194
+** Event #1099008   t=601.000140310309   Elapsed: 13.3498s (0m 13s)  60% completed  (60% total)
+     Speed:     ev/sec=78682.6   simsec/sec=29.4097   ev/simsec=2675.4
+     Messages:  created: 99989   present: 50942   in FES: 136
+Message Counter: 194
+Message Counter: 194
+Message Counter: 194
+Message Counter: 194
+Message Counter: 194
+Message Counter: 194
+Message Counter: 194
+Message Counter: 194
+Message Counter: 194
+Message Counter: 194
+Message Counter: 194
+Message Counter: 194
+Message Counter: 194
+Message Counter: 194
+Message Counter: 194
+** Event #1174272   t=633.050008916656   Elapsed: 14.3618s (0m 14s)  63% completed  (63% total)
+     Speed:     ev/sec=74366   simsec/sec=31.6675   ev/simsec=2348.34
+     Messages:  created: 103572   present: 54268   in FES: 122
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+** Event #1270784   t=681.100077165729   Elapsed: 15.3698s (0m 15s)  68% completed  (68% total)
+     Speed:     ev/sec=95751   simsec/sec=47.6712   ev/simsec=2008.57
+     Messages:  created: 108436   present: 58457   in FES: 98
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+RSUExampleScenario.rsu[3] Is free now!!!!!!!!!!!!!!! at 690.96955533661
+Message Counter: 195
+Message Counter: 195
+~~~~~~~~~~Vehicle to Service now - 399
+(omnetpp::cModule)rsu[3]
+~~~~~~~~~~~RSU will be busy for 254 FROM TIME - 695.629491143014
+3994RequestedResource256.762256.762
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+RSUExampleScenario.rsu[4] Is free now!!!!!!!!!!!!!!! at 719.465471563952
+Message Counter: 195
+** Event #1336320   t=722.100228478245   Elapsed: 16.3715s (0m 16s)  72% completed  (72% total)
+     Speed:     ev/sec=65422.8   simsec/sec=40.9293   ev/simsec=1598.43
+     Messages:  created: 111485   present: 61177   in FES: 77
+~~~~~~~~Vehicle to Service now - 303
+RSUExampleScenario.rsu[4]
+~~~~~~~~~~~RSU will be busy for 189 FROM TIME - 723.798136756191
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+** Event #1400064   t=777.150208717155   Elapsed: 17.3723s (0m 17s)  77% completed  (77% total)
+     Speed:     ev/sec=63694.4   simsec/sec=55.0072   ev/simsec=1157.93
+     Messages:  created: 114371   present: 63685   in FES: 56
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+** Event #1466624   t=861.050146690504   Elapsed: 18.3755s (0m 18s)  86% completed  (86% total)
+     Speed:     ev/sec=66346.6   simsec/sec=83.631   ev/simsec=793.326
+     Messages:  created: 117255   present: 66172   in FES: 33
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+Message Counter: 195
+RSUExampleScenario.rsu[4] Is free now!!!!!!!!!!!!!!! at 913.702542011318
+~~~~~~~~Vehicle to Service now - 201
+RSUExampleScenario.rsu[4]
+~~~~~~~~~~~RSU will be busy for 163 FROM TIME - 917.150364747695
+Message Counter: 195
+Message Counter: 195
+RSUExampleScenario.rsu[3] Is free now!!!!!!!!!!!!!!! at 949.825216860747
+~~~~~~~~~~Vehicle to Service now - 519
+(omnetpp::cModule)rsu[3]
+~~~~~~~~~~~RSU will be busy for 464 FROM TIME - 950.622224273947
+5193RequestedResource310.378310.378
+** Event #1492280   t=1000   Elapsed: 18.7129s (0m 18s)  100% completed  (100% total)
+     Speed:     ev/sec=76035.8   simsec/sec=411.669   ev/simsec=184.701
+     Messages:  created: 117815   present: 66388   in FES: 12
+
+<!> Simulation time limit reached -- at t=1000s, event #1492280
+
+Calling finish() at end of Run #0...
+ID: RSUExampleScenario.rsu[0]
+RecievedMessage: 17
+QHigh: 
+QMid: 
+QLow: 
+
+ID: RSUExampleScenario.rsu[1]
+RecievedMessage: 17
+QHigh: 
+QMid: 
+QLow: 
+
+ID: RSUExampleScenario.rsu[2]
+RecievedMessage: 17
+QHigh: 
+QMid: 
+QLow: 
+
+ID: RSUExampleScenario.rsu[3]
+RecievedMessage: 17
+QHigh: 
+QMid: 
+QLow: 
+
+ID: RSUExampleScenario.rsu[4]
+RecievedMessage: 17
+QHigh: 
+QMid: 
+QLow: 	807	2	RequestedResource	447.879	76---->	903	3	RequestedResource	479.381	223---->
+
+
+End.
+****************************FCFS*************************
+39.0's request has started. it will take time- 602.0 ending on 602.0
+117.0's request has started. it will take time- 596.0 ending on 1198.0
+201.0's request has started. it will take time- 163.0 ending on 1361.0
+303.0's request has started. it will take time- 189.0 ending on 1550.0
+399.0's request has started. it will take time- 254.0 ending on 1804.0
+513.0 has 752.0 left to finish a 612.0 time request. So can not fulfil this request!!!
+519.0's request has started. it will take time- 464.0 ending on 2268.0
+705.0 has 997.0 left to finish a 751.0 time request. So can not fulfil this request!!!
+807.0's request has started. it will take time- 76.0 ending on 2344.0
+903.0's request has started. it will take time- 223.0 ending on 2567.0
