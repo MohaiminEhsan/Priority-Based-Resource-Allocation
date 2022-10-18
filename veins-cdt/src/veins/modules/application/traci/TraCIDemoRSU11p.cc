@@ -25,6 +25,7 @@
 #include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
 #include "veins/modules/application/traci/constants.h"
 #include "veins/modules/application/ieee80211p/DemoBaseApplLayer.h"
+//#include "cconfiguration.h"
 
 #include <iostream>
 #include <string>
@@ -131,14 +132,23 @@ public:
 
 void TraCIDemoRSU11p::initialize(int stage){
     DemoBaseApplLayer::initialize(stage);
+    std::ofstream outfile ("Distance.txt");
+    outfile.close();
+    std::ofstream Coutfile ("Connection.txt");
+    Coutfile.close();
+    std::ofstream Timeoutfile ("Time.txt");
+    Timeoutfile.close();
+
     if (stage == 0)
     {
         QueueHandlingMessage = new cMessage("Queue Handling Message", QUEUE_HANDLING);
         RSUStatusChangeMessage = new cMessage("RSU Status Change Message", STATUS_CHANGE);
+        RSUStatusChangeMessageFuzzy = new cMessage("RSU Status Change Message Fuzzy", STATUS_CHANGE_FUZZY);
         //DeleteFromOtherRSUNotification = new cMessage ("Delete a request from other RSU", DELETE_REQUEST_FROM_RSU);
         RSUStatusChangeMessage->setName("Initialize");
         //DeleteFromOtherRSUNotification->setName("Initialize");
         scheduleAt(simTime()+uniform(0.05, 1), RSUStatusChangeMessage);
+        scheduleAt(simTime()+uniform(1.01, 1.99), RSUStatusChangeMessageFuzzy);
         //scheduleAt(simTime()+uniform(0.05, 0.5), DeleteFromOtherRSUNotification);
         scheduleAt(simTime()+5+uniform(0.05, 1), QueueHandlingMessage);
     }
@@ -232,7 +242,7 @@ int FuzzyAlgo(float Distance, double rsuRange)
     FuzzySet[1]->setMiddle(drstart,500);
     //FuzzySet[1]->setType('r');
     FuzzySet[1]->setName("bad_distance");
-
+    return 0;
 }
 
 
@@ -250,6 +260,70 @@ bool DefineDistance(float Distance, double rsuRange)
     }
 }
 
+
+float DefineDistance2(float Distance , double rsuRange)
+{
+
+    float SP;
+    float NextDistancewithRSU;
+    std::list<float> DistanceList;
+    std::string line;
+    std::string DistanceFileName("Distance.txt");
+    ofstream DistanceFileOut;
+    std::ifstream DistanceFileIn("Distance.txt");
+
+    DistanceFileOut.open(DistanceFileName, std::ios_base::app);
+
+    if (DistanceFileOut.is_open()){
+        DistanceFileOut << Distance << endl;
+
+    }
+
+    if (DistanceFileIn.is_open())
+        {
+
+        while(std::getline(DistanceFileIn, line))
+        {
+            DistanceList.push_back(std::stoi(line));
+        }
+        DistanceFileIn.close();
+        }
+    float DistanceMean;
+    float avg = 0;
+    std::list<float>::const_iterator it;
+    for(it = DistanceList.begin(); it != DistanceList.end(); it++) avg += *it;
+    avg /= DistanceList.size();
+
+    DistanceMean = avg;
+    float c= (DistanceMean + rsuRange)/2;
+
+    float d1 = Distance - DistanceMean;
+    float d2 = rsuRange - DistanceMean;
+    float d = pow((d1/d2),2);
+
+    if (Distance <= DistanceMean)
+    {
+        SP = 1;
+    }
+    else if (Distance > DistanceMean && Distance <= c)
+    {
+        SP = 1- 2*d;
+    }
+    else if (Distance > c && Distance < rsuRange){
+        SP = 2*d;
+    }
+    else if (Distance>=rsuRange)
+    {
+        SP=0;
+    }
+
+    DistanceFileOut.close();
+
+    std::cout<<"SPD: " <<SP<<std::endl;
+    return SP;
+}
+
+
 bool DefineConnection(float connectionStr )
 {
     float ConnectionT = 85;
@@ -266,6 +340,100 @@ bool DefineConnection(float connectionStr )
 }
 
 
+float DefineTime2(int time)
+{
+    float mean;
+    std::list<float> TimeList;
+    std::string line;
+    std::string FileName("Time.txt");
+    ofstream FileOut;
+    std::ifstream FileIn("Time.txt");
+
+    FileOut.open(FileName, std::ios_base::app);
+
+    if (FileOut.is_open()){
+        FileOut << time << endl;
+
+    }
+
+    if (FileIn.is_open())
+    {
+
+    while(std::getline(FileIn, line))
+    {
+        TimeList.push_back(std::stoi(line));
+    }
+    FileIn.close();
+    }
+
+    float avg = 0;
+    std::list<float>::const_iterator it;
+    for(it = TimeList.begin(); it != TimeList.end(); it++) avg += *it;
+    avg /= TimeList.size();
+
+    mean = avg;
+    std::cout<< "TIME MEAN : " << mean<<std::endl;
+    return mean;
+
+}
+
+float DefineConnection2(float connectionStr )
+{
+        float SP;
+        std::list<float> ConnectionList;
+        std::string line;
+        std::string FileName("Connection.txt");
+        ofstream FileOut;
+        std::ifstream FileIn("Connection.txt");
+
+        FileOut.open(FileName, std::ios_base::app);
+
+        if (FileOut.is_open()){
+            FileOut << connectionStr << endl;
+
+        }
+
+        if (FileIn.is_open())
+            {
+
+            while(std::getline(FileIn, line))
+            {
+                ConnectionList.push_back(std::stoi(line));
+            }
+            FileIn.close();
+            }
+        float ConnectionMean;
+        float avg = 0;
+        std::list<float>::const_iterator it;
+        for(it = ConnectionList.begin(); it != ConnectionList.end(); it++) avg += *it;
+        avg /= ConnectionList.size();
+
+        ConnectionMean = avg;
+        float standardDeviation;
+
+        for(it = ConnectionList.begin(); it != ConnectionList.end(); it++) {
+            standardDeviation += pow(*it - avg, 2);
+          }
+
+        float SDC = sqrt(standardDeviation / ConnectionList.size());
+
+        float c1 = connectionStr - ConnectionMean;
+        float c11 = pow(c1,2);
+        float c2 = pow(SDC,2);
+        float c22 = 2*c2;
+        float c =-c11/c22;
+        SP =exp(c);
+
+        std::cout<<"SPC: " <<SP<<std::endl;
+
+        FileOut.close();
+
+        return SP;
+
+}
+
+
+
 void showq(queue<tuple <int, double, std::string, double, int> > gq)
 {
     queue<tuple <int, double, std::string, double, int> > g = gq;
@@ -277,7 +445,16 @@ void showq(queue<tuple <int, double, std::string, double, int> > gq)
     std::cout<<std::endl;
 }
 
-
+void showqFuzzy(queue<tuple <int, double, std::string, double, int, float> > gq)
+{
+    queue<tuple <int, double, std::string, double, int, float> > g = gq;
+    while (!g.empty()) {
+        tuple <int, double, std::string, double, int, float> Tuple = g.front();
+        std::cout << '\t' << get<0>(Tuple) << '\t' << get<1>(Tuple) <<'\t' << get<2>(Tuple) << '\t' << get<3>(Tuple)<< '\t'<< get<4>(Tuple)<< '\t' << get<5>(Tuple) <<"---->";
+        g.pop();
+    }
+    std::cout<<std::endl;
+}
 
 double SimTimetoDoble (simtime_t time)
 {
@@ -324,6 +501,32 @@ bool checkinQ(queue<tuple <int, double, std::string, double, int> > q, int id)
 }
 
 
+bool checkinQFuzzy(queue<tuple <int, double, std::string, double, int,float> > q, int id)
+{
+    /*std::cout<<"Before Check Started Status!! " << id << std::endl;
+    showq(q);*/
+    std::cout<<"Checked started!!" << std::endl;
+    bool flag = false;
+    queue<tuple <int, double, std::string, double, int, float> > g = q;
+    while (!g.empty())
+      {
+        // Each element of the priority
+        // queue is a tuple itself
+        tuple <int, double, std::string, double, int, float> Tuple = g.front();
+        if (get<0>(Tuple) == id)
+        {
+            flag = true;
+        }
+        g.pop();
+      }
+    //std::cout<<"Check Status: " << flag << std::endl;
+    //std::cout<<"Checked !!" << std::endl;
+    return flag;
+}
+
+
+
+
 queue<tuple <int, double, std::string, double, int>> replaceinQ(queue<tuple <int, double, std::string, double, int> > q, tuple <int, double, std::string, double, int> T)
 {
     std::cout<<"Replace started!!" << std::endl;
@@ -334,6 +537,32 @@ queue<tuple <int, double, std::string, double, int>> replaceinQ(queue<tuple <int
     while (!g.empty())
           {
             tuple <int, double, std::string, double, int> Tuple = g.front();
+            if (get<0>(Tuple) == id)
+            {
+                gnew.push(T);
+            }
+            else {
+                gnew.push(g.front());
+            }
+            g.pop();
+
+          }
+
+    return gnew;
+
+    std::cout<<"Replaced!!" << std::endl;
+}
+
+queue<tuple <int, double, std::string, double, int, float>> replaceinQFuzzy(queue<tuple <int, double, std::string, double, int, float> > q, tuple <int, double, std::string, double, int,float> T)
+{
+    std::cout<<"Replace started!!" << std::endl;
+    queue<tuple <int, double, std::string, double, int, float> > g = q;
+    queue<tuple <int, double, std::string, double, int, float> > gnew;
+    int id = get<0>(T);
+
+    while (!g.empty())
+          {
+            tuple <int, double, std::string, double, int, float> Tuple = g.front();
             if (get<0>(Tuple) == id)
             {
                 gnew.push(T);
@@ -380,6 +609,36 @@ queue<tuple <int, double, std::string, double, int>> DeletefromQ(queue<tuple <in
 }
 
 
+queue<tuple <int, double, std::string, double, int, float>> DeletefromQFuzzy(queue<tuple <int, double, std::string, double, int, float> > q, int id)
+{
+    //std::cout<<"Delete Function"<<std::endl;
+
+    /*std::cout<<"Before Delete Function Status: "<< id <<std::endl;
+    showq(q);*/
+
+    queue<tuple <int, double, std::string, double, int,float> > g = q;
+    queue<tuple <int, double, std::string, double, int,float> > gnew;
+    while (!g.empty())
+      {
+        tuple <int, double, std::string, double, int, float> Tuple = g.front();
+        if (get<0>(Tuple) != id)
+        {
+            gnew.push(g.front());
+        }
+        g.pop();
+
+      }
+    //std::cout<<"Deleted!!" << std::endl;
+
+    /*std::cout<<"After Delete Function Status of Queue "<<std::endl;
+    showq(gnew);*/
+
+    return gnew;
+
+}
+
+
+
 
 int minIndex(queue<tuple <int, double, std::string, double, int> > q, int sortedIndex)
 {
@@ -402,6 +661,29 @@ int minIndex(queue<tuple <int, double, std::string, double, int> > q, int sorted
     }
     return min_index;
 }
+
+int minIndexFuzzy(queue<tuple <int, double, std::string, double, int, float> > q, int sortedIndex)
+{
+    int min_index = -1;
+    int min_val = INT_MAX;
+    int n = q.size();
+    for (int i=0; i<n; i++)
+    {
+        tuple <int, double, std::string, double, int, float> T = q.front();
+
+        double curr = get<5>(T);
+        q.pop();
+        if (curr <= min_val && i <= sortedIndex)
+        {
+            min_index = i;
+            min_val = curr;
+        }
+
+        q.push(T);
+    }
+    return min_index;
+}
+
 
 
 queue<tuple <int, double, std::string, double, int> > insertMinToRear(queue<tuple <int, double, std::string, double, int> > q, int min_index)
@@ -434,6 +716,34 @@ queue<tuple <int, double, std::string, double, int> > insertMinToRear(queue<tupl
 }
 
 
+queue<tuple <int, double, std::string, double, int,float> > insertMinToRearFuzzy(queue<tuple <int, double, std::string, double, int, float> > q, int min_index)
+{
+
+    int min_val;
+    tuple <int, double, std::string, double, int, float> Temp;
+    int n = q.size();
+    for (int i = 0; i < n; i++)
+    {
+        tuple <int, double, std::string, double, int, float> T = q.front();
+        double curr =  get<5>(T);
+        q.pop();
+        if (i != min_index)
+        {
+            q.push(T);
+        }
+        else
+        {
+            min_val = curr;
+            Temp = T;
+        }
+
+    }
+    q.push(Temp);
+
+    return q;
+}
+
+
 
 queue<tuple <int, double, std::string, double, int> > sortQ(queue<tuple <int, double, std::string, double, int> > q)
 {
@@ -449,6 +759,55 @@ queue<tuple <int, double, std::string, double, int> > sortQ(queue<tuple <int, do
 
     return q;
 }
+
+
+queue<tuple <int, double, std::string, double, int, float> > reverseQueue(queue<tuple <int, double, std::string, double, int, float> > queue) {
+    int n = queue.size();
+    std::stack<tuple <int, double, std::string, double, int, float>> st;
+
+    // Remove all the elements from queue and push them to stack
+    for (int i = 0; i < n; i++) {
+        tuple <int, double, std::string, double, int,float> curr = queue.front();
+        queue.pop();
+        st.push(curr);
+    }
+
+    // Pop out elements from the stack and push them back to queue
+    for (int i = 0; i < n; i++) {
+        tuple <int, double, std::string, double, int,float> curr = st.top();
+        st.pop();
+        queue.push(curr);
+    }
+
+    // Print the reversed queue
+    for (int i = 0; i < n; i++) {
+        tuple <int, double, std::string, double, int,float> curr = queue.front();
+        queue.pop();
+        queue.push(curr);
+    }
+
+    return queue;
+
+}
+
+
+
+queue<tuple <int, double, std::string, double, int, float> > sortQFuzzy(queue<tuple <int, double, std::string, double, int, float> > q)
+{
+
+    for (int i = 1; i <= q.size(); i++)
+    {
+        int min_index = minIndexFuzzy(q, q.size() - i);
+        q = insertMinToRearFuzzy(q, min_index);
+    }
+
+
+    q = reverseQueue(q);
+
+
+    return q;
+}
+
 
 
 
@@ -491,13 +850,56 @@ queue<tuple <int, double, std::string, double, int> >  QueueDeductTimeFromMember
 }
 
 
+
+queue<tuple <int, double, std::string, double, int, float> >  QueueDeductTimeFromMembersFuzzy(queue<tuple <int, double, std::string, double, int, float> > q)
+{
+
+    queue<tuple <int, double, std::string, double, int, float> > g = q;
+    queue<tuple <int, double, std::string, double, int, float> > gnew;
+    double TimeToDeduct = 5;
+    double MaxWaitTime;
+
+    while (!g.empty())
+      {
+        tuple <int, double, std::string, double, int, float> Tuple = g.front();
+
+        tuple <int, double, std::string, double, int, float> NewTuple;
+
+        double MaxWaitTimeInit = get<1>(Tuple);
+
+        if (MaxWaitTimeInit < TimeToDeduct)
+        {
+            TimeToDeduct = 0;
+        }
+
+        MaxWaitTime = MaxWaitTimeInit - TimeToDeduct;
+
+        NewTuple = make_tuple(get<0>(Tuple), MaxWaitTime,get<2>(Tuple), get<3>(Tuple), get<4>(Tuple), get<5>(Tuple));
+
+        gnew.push(NewTuple);
+
+        g.pop();
+        TimeToDeduct = 5;
+
+      }
+
+    return gnew;
+
+}
+
+
+
 void TraCIDemoRSU11p::QueueHandling()
 {
     std::list<int> AlreadyExecutedRequest;
+    std::list<int> AlreadyExecutedRequestFuzzy;
 
     ifstream Vrequestfile ("RSU.txt");
+    ifstream VrequestfileFuzzy ("RSUFuzzy.txt");
     std::string line;
+    std::string lineFuzzy;
     int VehicleID;
+    int VehicleIDFuzzy;
 
     if (Vrequestfile.is_open())
     {
@@ -508,6 +910,16 @@ void TraCIDemoRSU11p::QueueHandling()
 
                 Vrequestfile.close();
     }
+
+    if (VrequestfileFuzzy.is_open())
+        {
+                    for(lineFuzzy; getline(VrequestfileFuzzy, lineFuzzy);){
+
+                        AlreadyExecutedRequestFuzzy.push_back(std::stoi(lineFuzzy));
+                    }
+
+                    VrequestfileFuzzy.close();
+        }
 
 
 
@@ -534,6 +946,27 @@ void TraCIDemoRSU11p::QueueHandling()
         QLow = DeletefromQ(QLow, VehicleID);
         QLow = QueueDeductTimeFromMembers(QLow);
     }
+
+
+
+    if (QHigh_Fuzzy.empty()==false)
+    {
+        for (auto const& i : AlreadyExecutedRequestFuzzy) {
+            VehicleIDFuzzy = i;
+            }
+        QHigh_Fuzzy = DeletefromQFuzzy(QHigh_Fuzzy, VehicleIDFuzzy);
+        QHigh_Fuzzy = QueueDeductTimeFromMembersFuzzy(QHigh_Fuzzy);
+    }
+    if (QLow_Fuzzy.empty()==false)
+    {
+        for (auto const& i : AlreadyExecutedRequestFuzzy) {
+            VehicleIDFuzzy = i;
+            }
+        QLow_Fuzzy = DeletefromQFuzzy(QLow_Fuzzy, VehicleIDFuzzy);
+        QLow_Fuzzy = QueueDeductTimeFromMembersFuzzy(QLow_Fuzzy);
+        }
+
+
 
 
 }
@@ -584,6 +1017,49 @@ tuple <int, double, std::string, double, int> VehilceToFirstServe(queue<tuple <i
 double FindMin(double x, double y, double z){
   return x < y ? (x < z ? x : z) : (y < z ? y : z);
 }
+
+
+
+tuple <int, double, std::string, double, int, float> QueueCheckingHighFuzzy(queue<tuple<int, double, std::string, double, int, float> >QHigh)
+{
+    tuple <int, double, std::string, double, int, float> T;
+    T = make_tuple(0, 0.0,"No", 0.0, 0.0, 0.0);
+
+    queue<tuple<int, double, std::string, double, int, float> >Q = QHigh;
+
+    tuple <int, double, std::string, double, int, float> Temp;
+    std::string Flag = "No";
+
+    if (QHigh.empty()==false)
+    {
+        for (int i=0; i<QHigh.size(); i++)
+            {
+                Temp = Q.front();
+
+                double curr = get<1>(Temp);
+                Q.pop();
+
+                if (curr == get<4>(Temp))
+                {
+                    Flag = "Yes";
+                    break;
+                }
+
+            }
+
+        if (Flag == "Yes"){
+            return Temp;
+        }
+        else {
+            return T;
+        }
+    }
+    else {
+        return T;
+    }
+
+}
+
 
 
 std::string QueueWithLowDeadline(queue<tuple<int, double, std::string, double, int> >QHigh, queue<tuple<int, double, std::string, double, int> > QMid, queue<tuple<int, double, std::string, double, int> > QLow)
@@ -650,17 +1126,80 @@ std::string QueueWithLowDeadline(queue<tuple<int, double, std::string, double, i
 
 
 
+
+
+
+
+
+
+
 void TraCIDemoRSU11p::ResourceAlllocation()
 {
     int VehicleID;
     std::string RSUfilename("RSU.txt");
+    std::string RSUFuzzyfilename("RSUFuzzy.txt");
     ofstream RSUFileOut;
+    ofstream RSUFuzzyFileOut;
     RSUFileOut.open(RSUfilename, std::ios_base::app);
+    RSUFuzzyFileOut.open(RSUFuzzyfilename, std::ios_base::app);
     std::string MessageFromVehilceToServe;
     tuple <int, double, std::string, double, int> TupleHigh;
     tuple <int, double, std::string, double, int> TupleMid;
     tuple <int, double, std::string, double, int> TupleLow;
 
+
+    tuple <int, double, std::string, double, int, float> TupleHighFuzzy;
+    tuple <int, double, std::string, double, int, float> TupleLowFuzzy;
+
+
+
+    //Fuzzy Based Prioratization Function
+    //Start
+
+
+    tuple <int, double, std::string, double, int, float> ServeNowHighFuzzy = QueueCheckingHighFuzzy(QHigh_Fuzzy);
+    std::string NeedServingFuzzyNow = get<2>(ServeNowHighFuzzy);
+    if (NeedServingFuzzyNow != "No" && get<0>(ServeNowHighFuzzy)!=0)
+    {
+        VehicleID = get<0>(ServeNowHighFuzzy);
+        std::cout<<"~~~~~~~~Vehicle to Service now Fuzzy - "<< VehicleID <<std::endl;
+        std::cout<< getParentModule()->getFullPath() << std::endl;
+        std::cout<<"~~~~~~~~~~~RSU Fuzzy will be busy for "<< get<4>(ServeNowHighFuzzy) << " FROM TIME - " <<simTime()<<std::endl;
+
+        RSUBusyTimeFuzzy = get<4>(ServeNowHighFuzzy);
+        RSUBusyFuzzy = true;
+        std::string RSUName = getParentModule()->getFullPath();
+        RSUStatusChangeMessageFuzzy->setName(RSUName.c_str());
+        QHigh_Fuzzy = DeletefromQFuzzy(QHigh_Fuzzy, VehicleID);
+        if (QLow_Fuzzy.empty()==false)
+        {
+            TupleLowFuzzy = QLow_Fuzzy.front();
+            QLow_Fuzzy.pop();
+            QHigh_Fuzzy.push(TupleLowFuzzy);
+            QHigh_Fuzzy = sortQFuzzy(QHigh_Fuzzy);
+        }
+        if (RSUFuzzyFileOut.is_open())
+        {
+           std::string VehicleIDStr =  std::to_string(VehicleID);
+           RSUFuzzyFileOut << VehicleIDStr << endl;
+        }
+        scheduleAt(simTime()+RSUBusyTimeFuzzy+uniform(0.05, 1), RSUStatusChangeMessageFuzzy);
+    }
+    else if (NeedServingFuzzyNow == "No")
+    {
+
+
+    }
+
+    RSUFuzzyFileOut.close();
+
+    //Fuzzy Based Prioratization Function
+    //End
+
+
+
+    // Static Threshold Prioratization
+    //Start
 
     std::string QueueToServe = QueueWithLowDeadline(QHigh, QMid, QLow);
 
@@ -773,12 +1312,17 @@ void TraCIDemoRSU11p::ResourceAlllocation()
  }
 
     RSUFileOut.close();
+
+
+    //Static Threshold Prioratization Function
+    //End
+
 }
 
 
 
 
-//////////// FCFS for results
+//////////// FCFS for resultscheckinQFuzzy
 
 void TraCIDemoRSU11p::FCFS(int VehicleID, int ServiceTime, int DeadLine)
 {
@@ -803,9 +1347,11 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
 {
 
 
+
+
     TraCIDemo11pMessage* wsm = check_and_cast<TraCIDemo11pMessage*>(frame);
 
-    if (wsm->getKind()==QUEUE_HANDLING || wsm->getKind()==STATUS_CHANGE || wsm->getKind()==DELETE_REQUEST_FROM_RSU)
+    if (wsm->getKind()==QUEUE_HANDLING || wsm->getKind()==STATUS_CHANGE || wsm->getKind()==STATUS_CHANGE_FUZZY)
     {
         return;
     }
@@ -870,7 +1416,11 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
     bool InRSURange = NextDestinationinRSURange(NextDistancewithRSU, RSUmaxRange);
 
     bool DistanceType = DefineDistance(DistancewithRSU, RSUmaxRange);
+    float SPDistance = DefineDistance2(DistancewithRSU, RSUmaxRange);
+    float SPConnection = DefineConnection2(connectionStr);
     bool ConnectionType = DefineConnection(connectionStr);
+
+    float SP_New = SPDistance + SPConnection;
 
 
     int SubPriority;
@@ -890,6 +1440,7 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
     }*/
 
 
+
     simtime_t MessageInitTime = wsm->getMessageInitTime();
     double MsgInitTime = SimTimetoDoble(MessageInitTime);
     double TimetoReachRSU = SimTimetoDoble(simTime()) - SimTimetoDoble(MessageInitTime) ;
@@ -897,7 +1448,13 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
 
 
 
-    // Priority Function
+
+
+
+
+
+
+
 
 
     int SP = SubPriority;
@@ -911,6 +1468,109 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
     //std::cout<<"MaxWaitTime "<< MaxWaitTime <<std::endl;
 
     //std::cout<<"InitDeadline "<< InitDeadline << " Actual Deadline: " << Deadline<< " ST: " << ST <<std::endl;
+
+
+
+    // Priority Function Fuzzy based
+    // Start
+
+    if (MaxWaitTime > 0)
+    {
+        float th_mean = DefineTime2(MaxWaitTime);
+
+        if (MaxWaitTime == ST)
+        {
+            std::cout<<"Vehicle- "<<VehicleID<<" 's Request will be Services Now ASAP!!!!"<<std::endl;
+        }
+        else if(MaxWaitTime <= th_mean){
+            std::cout<<"Vehicle- "<<VehicleID<<" 's Request Will be put to a Fuzzy based queue. "<<std::endl;
+            tuple <int, double, std::string, double, int, float> Task;
+            std::string RequestedResource = "RR";
+            tuple <int, double, std::string, double, int, float> Q;
+            Q = make_tuple(VehicleID, MaxWaitTime,RequestedResource, MsgInitTime, ST, SP_New);
+
+            if (get<0>(Q) != VehicleID)
+             {
+                 std::cout<<"Changing" << std::endl;
+                 std::get<0>(Q) = VehicleID;
+                 //std::cout<<"VID: " << get<0>(Q)<< '\t' << VehicleID<<std::endl;
+             }
+
+            std::cout<<" Higher Fuzzy Priority. "<< SP_New <<std::endl;
+            if (QHigh_Fuzzy.empty()==false)
+             {
+                 bool inQ = checkinQFuzzy(QHigh_Fuzzy, VehicleID);
+                 if (QLow_Fuzzy.empty()==false){
+                 QLow_Fuzzy = DeletefromQFuzzy(QLow_Fuzzy, VehicleID);
+                 QLow_Fuzzy = sortQFuzzy(QLow_Fuzzy);}
+                 //std::cout<<" Check value 1: "<<inQ<<std::endl;
+                 if (inQ == false){
+
+                     QHigh_Fuzzy.push(Q);
+                     QHigh_Fuzzy = sortQFuzzy(QHigh_Fuzzy);
+                 }
+                 else {
+                     //std::cout<<" Higher Priority. 1"<<std::endl;
+                     QHigh_Fuzzy = replaceinQFuzzy(QHigh_Fuzzy, Q);
+                     QHigh_Fuzzy = sortQFuzzy(QHigh_Fuzzy);
+                 }
+             }
+             else {
+                     QHigh_Fuzzy.push(Q);
+             }
+
+        }
+        else if(MaxWaitTime > th_mean){
+                    std::cout<<"Vehicle- "<<VehicleID<<" 's Request Will be put to a Fuzzy based queue. "<<std::endl;
+                    tuple <int, double, std::string, double, int, float> Task;
+                    std::string RequestedResource = "RR";
+                    tuple <int, double, std::string, double, int, float> Q;
+                    Q = make_tuple(VehicleID, MaxWaitTime,RequestedResource, MsgInitTime, ST, SP_New);
+
+                    if (get<0>(Q) != VehicleID)
+                     {
+                         std::cout<<"Changing" << std::endl;
+                         std::get<0>(Q) = VehicleID;
+                         //std::cout<<"VID: " << get<0>(Q)<< '\t' << VehicleID<<std::endl;
+                     }
+
+                    std::cout<<" Lower Fuzzy Priority. "<< SP_New <<std::endl;
+                    if (QLow_Fuzzy.empty()==false)
+                     {
+                         bool inQ = checkinQFuzzy(QLow_Fuzzy, VehicleID);
+                         if (QHigh_Fuzzy.empty()==false){
+                         QHigh_Fuzzy = DeletefromQFuzzy(QHigh_Fuzzy, VehicleID);
+                         QHigh_Fuzzy = sortQFuzzy(QHigh_Fuzzy);}
+                         //std::cout<<" Check value 1: "<<inQ<<std::endl;
+                         if (inQ == false){
+                             QLow_Fuzzy.push(Q);
+                             QLow_Fuzzy = sortQFuzzy(QLow_Fuzzy);
+                         }
+                         else {
+                             //std::cout<<" Higher Priority. 1"<<std::endl;
+                             QLow_Fuzzy = replaceinQFuzzy(QLow_Fuzzy, Q);
+                             QLow_Fuzzy = sortQFuzzy(QLow_Fuzzy);
+                         }
+                     }
+                     else {
+                             QLow_Fuzzy.push(Q);
+                     }
+
+                }
+
+    }
+
+
+
+    // Priority Function Fuzzy based
+    // END
+
+
+    // Priority Function Static Threshold Based
+    // Start
+
+
+
 
     if (MaxWaitTime < ST)
     {
@@ -1186,6 +1846,11 @@ void TraCIDemoRSU11p::onWSM(BaseFrame1609_4* frame)
     showq(QMid);
     std::cout<<"QLow: ";
     showq(QLow);
+    std::cout<<"QHighFuzzy: ";
+    showqFuzzy(QHigh_Fuzzy);
+    std::cout<<"QLowFuzzy: ";
+    showqFuzzy(QLow_Fuzzy);
+
     std::cout<<std::endl;
 
 
@@ -1233,6 +1898,28 @@ void TraCIDemoRSU11p::handleSelfMsg(cMessage* msg)
         //std::cout<< "STATUS_CHANGE End"<<std::endl;
     }
 
+    if (msg->getKind() == STATUS_CHANGE_FUZZY)
+        {
+            //std::cout<< "STATUS_CHANGE Start at "<< simTime() << std::endl;
+            //std::cout<< msg->getName()<<std::endl;
+            std::string RSUNAME = msg->getName();
+            //std::cout<< RSUNAME<<std::endl;
+            if (RSUNAME == "Initialize")
+            {
+                //std::cout<<"STATUS_CHANGE_RETURN from " << getParentModule()<<std::endl;
+                std::cout << getParentModule()<<std::endl;
+                return;
+            }
+            if (RSUNAME == getParentModule()->getFullPath())
+            {
+            RSUBusyFuzzy=false;
+            RSUBusyTimeFuzzy=0;
+            std::cout<<RSUNAME<< " Is free now Fuzzy!!!!!!!!!!!!!!! at " <<simTime()<<std::endl;
+
+            }
+            //std::cout<< "STATUS_CHANGE End"<<std::endl;
+        }
+
     if (msg->getKind() == DELETE_REQUEST_FROM_RSU)
     {
 
@@ -1274,7 +1961,10 @@ void TraCIDemoRSU11p::finish(){
 
 
         remove("RSU.txt");
-
+        remove("RSUFuzzy.txt");
+        remove("Distance.txt");
+        remove("Connection.txt");
+        remove("Time.txt");
 
         std::cout<<"QHigh: ";
         showq(QHigh);

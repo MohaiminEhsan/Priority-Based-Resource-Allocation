@@ -1,7 +1,7 @@
 import sys
 import os.path
 
-RSUTimeStatus = 0
+RSUTimeStatus = 73
 RunNumber = sys.argv[1]
 
 
@@ -49,8 +49,9 @@ for list in RequestedListRefined:
     if (RequestDeadlineLeft < RequestServiceTime):
         toprint = (str(VehilceID) + " has " + str(RequestDeadline) + " left to finish a " + str(RequestServiceTime) + " time request. So can not fulfil this request!!!")
     else:
+        RSUTimeStatusOld = RSUTimeStatus
         RSUTimeStatus = RSUTimeStatus + RequestServiceTime
-        toprint = (str(VehilceID) + "'s request has started. it will take time- " + str(RequestServiceTime) + " ending on "+ str(RSUTimeStatus) )
+        toprint = (str(VehilceID) + "'s request has started. it will take time- " + str(RequestServiceTime) + " starting at " + str(RSUTimeStatusOld) + " ending on "+ str(RSUTimeStatus) )
     file_object.write(toprint+"\n")
     print(toprint)
         

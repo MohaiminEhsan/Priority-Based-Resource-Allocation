@@ -41,6 +41,9 @@
 #include <list>
 #include <sstream>
 #include <fstream>
+#include <random>
+#include <iterator>
+
 
 
 
@@ -74,6 +77,25 @@ std::vector<std::tuple<int, int, int>> vehicleLocation;
 
 
 Define_Module(veins::TraCIDemo11p);
+
+
+
+
+
+// poisson distribution for back off time
+
+double PoissonDistributionNumberGenerator(double AverageNumber)
+{
+    // seed the RNG
+    std::random_device rd; // uniformly-distributed integer random number generator
+    std::mt19937 rng (rd ()); // mt19937: Pseudo-random number generation
+    //double lamda = 1 / AverageNumber;
+    std::exponential_distribution<double> exp (AverageNumber);
+    double backofftime;
+    backofftime=  exp.operator() (rng);// generates the next random number in the distribution
+
+    return backofftime;
+}
 
 
 int RandomNumberGenerator(int min, int max)
@@ -140,8 +162,8 @@ void TraCIDemo11p::initialize(int stage)
         lastDroveAt = simTime();
         currentSubscribedServiceId = -1;
         stage ++;
-        TaskDeadline = RandomNumberGenerator(500,1000);
-        ServiceTime = RandomNumberGenerator(50,TaskDeadline);
+        TaskDeadline = RandomNumberGenerator(1,500);
+        ServiceTime = RandomNumberGenerator(1,TaskDeadline);
 
     }
 
@@ -186,7 +208,7 @@ void TraCIDemo11p::onWSM(BaseFrame1609_4* frame)
         //std::cout<<"Test2"<<std::endl;
         if (mobility->getRoadId()[0] != ':') traciVehicle->changeRoute(wsm->getDemoData(), 9999);
         int hopCounter = wsm->getHopCounter();
-        if (hopCounter == 3) {
+        if (hopCounter == 30) {
             //std::cout << "WSM " << wsm->getId() << " stopped due to reaching max number of Hops!!!" << std::endl;
             stopService();
             //delete (wsm);
@@ -235,7 +257,7 @@ void TraCIDemo11p::onWSM(BaseFrame1609_4* frame)
             //printList(NodeWithMessage);
             MessageCount++;
             MessageCountBase++;
-            scheduleAt(simTime() + 0.2 + uniform(0.01, 0.2), wsm->dup());
+            scheduleAt(simTime() + PoissonDistributionNumberGenerator(1.00) + uniform(0.01, 0.2), wsm->dup());
             //cancelAndDelete(wsm);
         }
     }
@@ -325,7 +347,7 @@ void TraCIDemo11p::handleSelfMsg(cMessage* msg)
                 //printList(NodeWithMessage);
                 MessageCount++;
                 MessageCountBase++;
-                scheduleAt(simTime() + 0.1, wsm);
+                scheduleAt(simTime() + PoissonDistributionNumberGenerator(1.00), wsm);
                 //cancelAndDelete(wsm);
             }
         }

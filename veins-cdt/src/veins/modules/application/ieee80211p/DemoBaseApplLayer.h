@@ -72,6 +72,7 @@ public:
         SEND_WSA_EVT,
         QUEUE_HANDLING,
         STATUS_CHANGE,
+        STATUS_CHANGE_FUZZY,
         DELETE_REQUEST_FROM_RSU
     };
 

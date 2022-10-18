@@ -62,6 +62,7 @@ protected:
     void handleSelfMsg(cMessage* msg) override;
     cMessage* QueueHandlingMessage;
     cMessage* RSUStatusChangeMessage;
+    cMessage* RSUStatusChangeMessageFuzzy;
     cMessage* DeleteFromOtherRSUNotification;
     //void handleSelfMsg(cMessage* msg) override;
     Mac1609_4* mac;
@@ -79,6 +80,8 @@ public:
     queue<tuple<int, double, std::string, double, int> > QHigh;
     queue<tuple<int, double, std::string, double, int> > QMid;
     queue<tuple<int, double, std::string, double, int> > QLow;
+    queue<tuple<int, double, std::string, double, int, float> > QLow_Fuzzy;
+    queue<tuple<int, double, std::string, double, int, float> > QHigh_Fuzzy;
     double RSUmaxRange = 500; // This is for determining if the Vehicle's next poistion is in RSU range or not.
     void initialize(int stage) override;
     void finish() override;
@@ -87,8 +90,9 @@ public:
     void FCFS(int VehicleID, int ServiceTime, int DeadLine);
     bool RunThread = true;
     bool RSUBusy = false;
+    bool RSUBusyFuzzy = false;
     double RSUBusyTime = 0;
-
+    double RSUBusyTimeFuzzy = 0;
 
     //void printList()
 };
