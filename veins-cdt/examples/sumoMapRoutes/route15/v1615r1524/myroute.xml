@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2022-10-11 15:13:30 by Eclipse SUMO duarouter Version 1.14.1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="colognev1600.net.xml"/>
+        <route-files value="mytrip.xml"/>
+    </input>
+
+    <output>
+        <output-file value="myroute.xml"/>
+    </output>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vehicle id="trip-1523" depart="0.00" color="magenta">
+        <route edges="23013042#0 25101966 34999321#2 24693845#0 24693845#1 154502572#5 -10212091#3 23015813#0 329890956 667410646#1 27115018#0 198171539#0 198171539#2 169465734#1 169465735#1 501456678 169453887#0 402179132 37873574 175589820 315921077#0 315921077#1 23015860#0 23015860#2 63589540 301750521 23015861#0 44037603#0 44037603#1 32233474#0 142518656#1"/>
+    </vehicle>
+</routes>

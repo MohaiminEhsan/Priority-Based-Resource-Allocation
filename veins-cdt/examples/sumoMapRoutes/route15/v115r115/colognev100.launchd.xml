@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- colognev100.launchd.xml -->
+
+<launch>
+    <copy file="colognev100.net.xml" />
+    <copy file="colognev100.rou.xml" />
+    <copy file="colognev100.poly.xml" />
+    <copy file="colognev100.sumo.cfg" type="config" />
+</launch>

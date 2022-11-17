@@ -1,0 +1,3 @@
+<trips> <!-- The opening tag -->
+   <trip id="trip-2693" from="886316727#1" to="-26155687#1" depart="0.0" color="Magenta"/>
+</trips> <!-- The closing tag -->

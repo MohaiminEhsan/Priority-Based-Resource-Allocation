@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!-- washingtondc200.launchd.xml -->
+
+<root>
+    <launch id="without-obstacles">
+        <copy file="washingtondc200.net.xml" />
+        <copy file="washingtondc200.rou.xml" />
+        <copy file="washingtondc200_without_obstacles.sumo.cfg" type="config" />
+    </launch>
+    <launch id="with-obstacles">
+        <copy file="washingtondc200.net.xml" />
+        <copy file="washingtondc200.rou.xml" />
+        <copy file="washingtondc200.poly.xml" />
+        <copy file="washingtondc200_with_obstacles.sumo.cfg" type="config" />
+    </launch>
+</root>
+

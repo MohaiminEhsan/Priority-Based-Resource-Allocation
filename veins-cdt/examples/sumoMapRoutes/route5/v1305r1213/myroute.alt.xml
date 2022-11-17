@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2022-10-08 01:19:16 by Eclipse SUMO duarouter Version 1.14.1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="colognev1300.net.xml"/>
+        <route-files value="mytrip.xml"/>
+    </input>
+
+    <output>
+        <output-file value="myroute.xml"/>
+    </output>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vehicle id="trip-1212" depart="0.00" color="magenta">
+        <routeDistribution last="0">
+            <route cost="299.75" probability="1.00000000" edges="5015532#4 5015531#0 27404900#0 27404839#1 583283169 583283195 29319045 289753604 27115122#0 27115122#1 583283156#0 583283156#1 255094956#0 824267465 255094955#0 255094955#2 2936806#0 113160347#0 113160347#2 255104326#0 51681577#1 321451886 4895018#0 -629582672#1 -206782858#4 -206782858#3 -206782858#2 -218408988#1 4390895#0 -8759465#8 -8759465#5 -8759465#2 36590980#0 37705430#0 147549213 620340708 620340709#0 620340711#0 620340706#0 28889303#1 180723490 180723489#0 180723491#0 620340714#0 154743411#0 620340713 620340716 501460458#0 110967368#0 109539742#0 109539742#1 4391001#0 303245743 51348112#0 374831953#0 303245744 1065789419 206149609#0 252773092 -303245745 -751197246 33805058#0 306387100 372313445#0 632980691 33971538#0 31901074 391820861 131959462#0 154874107#0 154874107#3 176385764#1 154874104 -24592789#2 -130752274#1 -130752273 -8076097#3 -8076097#2"/>
+        </routeDistribution>
+    </vehicle>
+</routes>

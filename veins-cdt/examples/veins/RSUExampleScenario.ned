@@ -26,7 +26,8 @@ import org.car2x.veins.nodes.Scenario;
 network RSUExampleScenario extends Scenario
 {
     submodules:
-        rsu[7]: RSU {
-            @display("p=150,140;i=veins/sign/yellowdiamond;is=vs");
+        rsu[4]: RSU {
+            //@display("p=150,140;i=veins/sign/yellowdiamond;is=vs");          // Original
+            @display("p=150,140;i=veins/sign/rsu;is=vs");
         }
 }

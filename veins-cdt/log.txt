@@ -1,0 +1,49 @@
+
+Loading images from '/home/mohaimin/Downloads/veins/project2/veins-cdt/images': *: 0  veins/*: 1  veins/background/*: 1  veins/node/*: 40  veins/sign/*: 6 
+Loading images from '/home/mohaimin/Downloads/veins/omnetpp/images': *: 0  abstract/*: 90  background/*: 8  block/*: 320  device/*: 195  logo/*: 1  maps/*: 9  misc/*: 70  msg/*: 55  old/*: 111  status/*: 28 
+
+(omnetpp::cModule)rsu[0]
+(omnetpp::cModule)rsu[3]
+(omnetpp::cModule)rsu[1]
+(omnetpp::cModule)rsu[2]
+Message Counter: 2
+Message Counter: 2
+Message Counter: 2
+Message Counter: 2
+Message Counter: 2
+Message Counter: 4
+Message Counter: 4
+Message Counter: 4
+Message Counter: 4
+Message Counter: 4
+Message Counter: 4
+Message Counter: 4
+Message Counter: 4
+Message Counter: 4
+Message Counter: 4
+Message Counter: 4
+Message Counter: 4
+ID: RSUExampleScenario.rsu[0]
+RecievedMessage: 0
+QHigh: 
+QMid: 
+QLow: 
+
+ID: RSUExampleScenario.rsu[1]
+RecievedMessage: 0
+QHigh: 
+QMid: 
+QLow: 
+
+ID: RSUExampleScenario.rsu[2]
+RecievedMessage: 0
+QHigh: 
+QMid: 
+QLow: 
+
+ID: RSUExampleScenario.rsu[3]
+RecievedMessage: 0
+QHigh: 
+QMid: 
+QLow: 
+
