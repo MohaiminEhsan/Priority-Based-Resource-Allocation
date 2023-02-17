@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+    <input>
+        <net-file value="cologne2.net.xml"/>
+        <route-files value="cologne6to8-3000.rou.xml"/>
+        <!--<additional-files value="cologne.poly.xml"/> -->
+    </input>
+
+
+    <processing>
+        <scale value="0.3"/>
+    </processing>
+
+    <!--<begin value="21600"/>-->
+ 
+    <report>
+        <verbose value="true"/>
+       <!-- <log value="cologne.log"/> -->
+    </report>
+
+</configuration>

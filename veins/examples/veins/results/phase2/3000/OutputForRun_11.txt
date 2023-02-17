@@ -1,0 +1,2639 @@
+OMNeT++ Discrete Event Simulation  (C) 1992-2019 Andras Varga, OpenSim Ltd.
+Version: 5.5.1, build: 190613-08ba16f914, edition: Academic Public License -- NOT FOR COMMERCIAL USE
+See the license for distribution terms and warranty disclaimer
+
+Setting up Cmdenv...
+
+Loading NED files from .:  1
+Loading NED files from ../../src/veins:  41
+Loading NED files from /home/mohaimin/Downloads/veins/veins2/veins/examples/veins:  1
+
+Preparing for running configuration WithChannelSwitching, run #0...
+Assigned runID=WithChannelSwitching-0-20230114-01:58:05-36976
+Setting up network "RSUExampleScenario"...
+Initializing...
+
+Running simulation...
+** Event #0   t=0   Elapsed: 1.3e-05s (0m 00s)  0% completed  (0% total)
+     Speed:     ev/sec=0   simsec/sec=0   ev/simsec=0
+     Messages:  created: 164   present: 164   in FES: 69
+** Event #256   t=1.500044902459   Elapsed: 4.92778s (0m 04s)  0% completed  (0% total)
+     Speed:     ev/sec=52.1534   simsec/sec=0.304407   ev/simsec=171.328
+     Messages:  created: 260   present: 260   in FES: 73
+** Event #305152   t=60.350121327481   Elapsed: 5.92779s (0m 05s)  6% completed  (6% total)
+     Speed:     ev/sec=304893   simsec/sec=58.8495   ev/simsec=5180.89
+     Messages:  created: 110271   present: 5452   in FES: 647
+735
+WSM Sent: 4
+** Event #757760   t=92.950134460817   Elapsed: 6.92789s (0m 06s)  9% completed  (9% total)
+     Speed:     ev/sec=452560   simsec/sec=32.5966   ev/simsec=13883.7
+     Messages:  created: 287101   present: 8145   in FES: 942
+219
+WSM Sent: 6
+225
+WSM Sent: 6
+** Event #1203712   t=113.750047123609   Elapsed: 7.92793s (0m 07s)  11% completed  (11% total)
+     Speed:     ev/sec=445937   simsec/sec=20.7992   ev/simsec=21440.1
+     Messages:  created: 485617   present: 10120   in FES: 1155
+** Event #1660672   t=131.000074305505   Elapsed: 8.93948s (0m 08s)  13% completed  (13% total)
+     Speed:     ev/sec=451739   simsec/sec=17.0529   ev/simsec=26490.4
+     Messages:  created: 694611   present: 12342   in FES: 1967
+453
+WSM Sent: 35
+1683
+WSM Sent: 38
+** Event #2110208   t=145.071225145378   Elapsed: 9.93985s (0m 09s)  14% completed  (14% total)
+     Speed:     ev/sec=449373   simsec/sec=14.0661   ev/simsec=31947.4
+     Messages:  created: 909657   present: 13181   in FES: 1657
+2091
+WSM Sent: 53
+** Event #2565888   t=157.800263771889   Elapsed: 10.9401s (0m 10s)  15% completed  (15% total)
+     Speed:     ev/sec=455580   simsec/sec=12.7262   ev/simsec=35798.5
+     Messages:  created: 1128973   present: 14204   in FES: 1609
+** Event #2958336   t=167.054118731102   Elapsed: 11.9403s (0m 11s)  16% completed  (16% total)
+     Speed:     ev/sec=392361   simsec/sec=9.25181   ev/simsec=42409.1
+     Messages:  created: 1329808   present: 16075   in FES: 2598
+585
+WSM Sent: 97
+** Event #3360512   t=176.000082170549   Elapsed: 12.9708s (0m 12s)  17% completed  (17% total)
+     Speed:     ev/sec=390277   simsec/sec=8.68129   ev/simsec=44956.1
+     Messages:  created: 1537046   present: 16781   in FES: 2674
+** Event #3773184   t=185.054670029605   Elapsed: 13.9709s (0m 13s)  18% completed  (18% total)
+     Speed:     ev/sec=412623   simsec/sec=9.05351   ev/simsec=45576
+     Messages:  created: 1744755   present: 17214   in FES: 2633
+4737
+WSM Sent: 121
+1185
+WSM Sent: 126
+** Event #4198912   t=195   Elapsed: 14.972s (0m 14s)  19% completed  (19% total)
+     Speed:     ev/sec=425258   simsec/sec=9.93434   ev/simsec=42806.8
+     Messages:  created: 1949489   present: 16441   in FES: 2058
+RL Enabled Probable Fogs: 
+14, Resource: 18, Storage: 18, Bandwidth: 7, Score: 15
+19, Resource: 19, Storage: 19, Bandwidth: 2, Score: 15
+-------------------------
+RL Enabled Probable Fogs: 
+14, Resource: 18, Storage: 18, Bandwidth: 7, Score: 15
+19, Resource: 19, Storage: 19, Bandwidth: 2, Score: 15
+-------------------------
+RL Enabled Probable Fogs: 
+14, Resource: 18, Storage: 18, Bandwidth: 6, Score: 15
+19, Resource: 19, Storage: 19, Bandwidth: 6, Score: 16
+-------------------------
+RL Enabled Probable Fogs: 
+14, Resource: 18, Storage: 18, Bandwidth: 6, Score: 15
+19, Resource: 19, Storage: 19, Bandwidth: 6, Score: 16
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 19, Storage: 19, Bandwidth: 11, Score: 17
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 19, Storage: 19, Bandwidth: 11, Score: 17
+-------------------------
+RL Enabled Probable Fogs: 
+14, Resource: 18, Storage: 18, Bandwidth: 15, Score: 17
+19, Resource: 19, Storage: 19, Bandwidth: 10, Score: 17
+-------------------------
+RL Enabled Probable Fogs: 
+14, Resource: 18, Storage: 18, Bandwidth: 15, Score: 17
+19, Resource: 19, Storage: 19, Bandwidth: 10, Score: 17
+-------------------------
+** Event #4631552   t=203.000028654099   Elapsed: 15.9821s (0m 15s)  20% completed  (20% total)
+     Speed:     ev/sec=428300   simsec/sec=7.91978   ev/simsec=54079.8
+     Messages:  created: 2188247   present: 17105   in FES: 2722
+2319
+WSM Sent: 156
+81
+WSM Sent: 161
+** Event #5029888   t=211.000061893335   Elapsed: 17.1443s (0m 17s)  21% completed  (21% total)
+     Speed:     ev/sec=342743   simsec/sec=6.88352   ev/simsec=49791.8
+     Messages:  created: 2399261   present: 17067   in FES: 2716
+441
+WSM Sent: 180
+** Event #5469696   t=221.028533461113   Elapsed: 18.1444s (0m 18s)  22% completed  (22% total)
+     Speed:     ev/sec=439780   simsec/sec=10.0278   ev/simsec=43855.9
+     Messages:  created: 2614275   present: 17059   in FES: 2510
+2601
+WSM Sent: 214
+** Event #5962752   t=229.200141155353   Elapsed: 19.1445s (0m 19s)  22% completed  (22% total)
+     Speed:     ev/sec=493013   simsec/sec=8.17089   ev/simsec=60337.7
+     Messages:  created: 2900980   present: 16142   in FES: 1823
+3333
+WSM Sent: 214
+4611
+WSM Sent: 214
+3423
+WSM Sent: 230
+** Event #6393088   t=238.054383399627   Elapsed: 20.1449s (0m 20s)  23% completed  (23% total)
+     Speed:     ev/sec=430153   simsec/sec=8.85048   ev/simsec=48602.2
+     Messages:  created: 3126265   present: 17412   in FES: 2854
+1095
+WSM Sent: 240
+1587
+WSM Sent: 240
+1281
+WSM Sent: 240
+** Event #6858752   t=246.000051272876   Elapsed: 21.1553s (0m 21s)  24% completed  (24% total)
+     Speed:     ev/sec=460890   simsec/sec=7.8642   ev/simsec=58606
+     Messages:  created: 3395078   present: 16915   in FES: 2692
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 33, Bandwidth: 3, Score: 24
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 33, Bandwidth: 3, Score: 24
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 33, Bandwidth: 2, Score: 24
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 33, Bandwidth: 2, Score: 24
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 33, Bandwidth: 6, Score: 25
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 33, Bandwidth: 6, Score: 25
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 33, Bandwidth: 11, Score: 26
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 33, Bandwidth: 11, Score: 26
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 33, Bandwidth: 10, Score: 25
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 33, Bandwidth: 10, Score: 25
+-------------------------
+2427
+WSM Sent: 258
+3171
+WSM Sent: 258
+** Event #7283200   t=255.054720098977   Elapsed: 22.1557s (0m 22s)  25% completed  (25% total)
+     Speed:     ev/sec=424279   simsec/sec=9.05106   ev/simsec=46876.1
+     Messages:  created: 3613287   present: 16994   in FES: 2624
+1395
+WSM Sent: 281
+4431
+WSM Sent: 288
+1851
+WSM Sent: 288
+5373
+WSM Sent: 298
+** Event #7736064   t=263.055251156762   Elapsed: 23.1559s (0m 23s)  26% completed  (26% total)
+     Speed:     ev/sec=452777   simsec/sec=7.99899   ev/simsec=56604.2
+     Messages:  created: 3871558   present: 16334   in FES: 2196
+159
+WSM Sent: 298
+2793
+WSM Sent: 298
+2955
+WSM Sent: 306
+1047
+WSM Sent: 306
+** Event #8175616   t=271.850024425101   Elapsed: 24.1559s (0m 24s)  27% completed  (27% total)
+     Speed:     ev/sec=439538   simsec/sec=8.79449   ev/simsec=49978.8
+     Messages:  created: 4108107   present: 15854   in FES: 1791
+1335
+WSM Sent: 356
+477
+WSM Sent: 356
+4899
+WSM Sent: 356
+** Event #8668416   t=280.054294822545   Elapsed: 25.1562s (0m 25s)  28% completed  (28% total)
+     Speed:     ev/sec=492668   simsec/sec=8.20208   ev/simsec=60066.3
+     Messages:  created: 4396724   present: 17335   in FES: 2937
+** Event #9179392   t=288.054417260814   Elapsed: 26.1567s (0m 26s)  28% completed  (28% total)
+     Speed:     ev/sec=510687   simsec/sec=7.9956   ev/simsec=63871
+     Messages:  created: 4702924   present: 17277   in FES: 2917
+2481
+WSM Sent: 404
+447
+WSM Sent: 416
+2595
+WSM Sent: 416
+1233
+WSM Sent: 416
+** Event #9623040   t=294.355258598538   Elapsed: 27.1571s (0m 27s)  29% completed  (29% total)
+     Speed:     ev/sec=443471   simsec/sec=6.29833   ev/simsec=70410.9
+     Messages:  created: 4977556   present: 15899   in FES: 1838
+1671
+WSM Sent: 422
+RL Enabled Probable Fogs: 
+19, Resource: 32, Storage: 41, Bandwidth: 3, Score: 28
+24, Resource: 30, Storage: 30, Bandwidth: 6, Score: 25
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 32, Storage: 41, Bandwidth: 3, Score: 28
+24, Resource: 30, Storage: 30, Bandwidth: 6, Score: 25
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 32, Storage: 41, Bandwidth: 6, Score: 29
+24, Resource: 30, Storage: 30, Bandwidth: 0, Score: 24
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 32, Storage: 41, Bandwidth: 6, Score: 29
+24, Resource: 30, Storage: 30, Bandwidth: 0, Score: 24
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 32, Storage: 41, Bandwidth: 11, Score: 30
+24, Resource: 30, Storage: 30, Bandwidth: 8, Score: 25
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 32, Storage: 41, Bandwidth: 11, Score: 30
+24, Resource: 30, Storage: 30, Bandwidth: 8, Score: 25
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 32, Storage: 41, Bandwidth: 10, Score: 30
+24, Resource: 30, Storage: 30, Bandwidth: 2, Score: 24
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 32, Storage: 41, Bandwidth: 10, Score: 30
+24, Resource: 30, Storage: 30, Bandwidth: 2, Score: 24
+-------------------------
+99
+WSM Sent: 443
+807
+WSM Sent: 443
+** Event #10095360   t=301.250120730153   Elapsed: 28.1573s (0m 28s)  30% completed  (30% total)
+     Speed:     ev/sec=472224   simsec/sec=6.89346   ev/simsec=68503.2
+     Messages:  created: 5267598   present: 15676   in FES: 1773
+4149
+WSM Sent: 443
+1293
+WSM Sent: 448
+** Event #10606592   t=309.054480186542   Elapsed: 29.1576s (0m 29s)  30% completed  (30% total)
+     Speed:     ev/sec=511085   simsec/sec=7.80211   ev/simsec=65506
+     Messages:  created: 5577825   present: 17105   in FES: 2945
+3507
+WSM Sent: 473
+** Event #11030016   t=317.08827935152   Elapsed: 30.1578s (0m 30s)  31% completed  (31% total)
+     Speed:     ev/sec=423366   simsec/sec=8.03269   ev/simsec=52705.3
+     Messages:  created: 5812741   present: 15654   in FES: 1796
+1515
+WSM Sent: 491
+1113
+WSM Sent: 491
+813
+WSM Sent: 513
+** Event #11486208   t=324.257573545157   Elapsed: 31.1579s (0m 31s)  32% completed  (32% total)
+     Speed:     ev/sec=456122   simsec/sec=7.16819   ev/simsec=63631.4
+     Messages:  created: 6087412   present: 15967   in FES: 2017
+363
+WSM Sent: 536
+2715
+WSM Sent: 536
+2769
+WSM Sent: 536
+4653
+WSM Sent: 536
+315
+WSM Sent: 536
+1101
+WSM Sent: 536
+1881
+WSM Sent: 539
+** Event #11963392   t=333.450109338805   Elapsed: 32.1579s (0m 32s)  33% completed  (33% total)
+     Speed:     ev/sec=477177   simsec/sec=9.19241   ev/simsec=51909.9
+     Messages:  created: 6351663   present: 15440   in FES: 1745
+3459
+WSM Sent: 539
+4209
+WSM Sent: 539
+2403
+WSM Sent: 556
+** Event #12297728   t=338.286574076111   Elapsed: 33.158s (0m 33s)  33% completed  (33% total)
+     Speed:     ev/sec=334320   simsec/sec=4.83624   ev/simsec=69128.2
+     Messages:  created: 6560107   present: 15853   in FES: 2205
+1005
+WSM Sent: 582
+3885
+WSM Sent: 586
+** Event #12721152   t=346.00004687196   Elapsed: 34.1858s (0m 34s)  34% completed  (34% total)
+     Speed:     ev/sec=411955   simsec/sec=7.50454   ev/simsec=54894.1
+     Messages:  created: 6800770   present: 16195   in FES: 2580
+891
+WSM Sent: 586
+819
+WSM Sent: 586
+3699
+WSM Sent: 586
+RL Enabled Probable Fogs: 
+19, Resource: 26, Storage: 34, Bandwidth: 3, Score: 23
+24, Resource: 24, Storage: 26, Bandwidth: 6, Score: 21
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 26, Storage: 34, Bandwidth: 3, Score: 23
+24, Resource: 24, Storage: 26, Bandwidth: 6, Score: 21
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 26, Storage: 34, Bandwidth: 6, Score: 24
+24, Resource: 24, Storage: 26, Bandwidth: 0, Score: 19
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 26, Storage: 34, Bandwidth: 6, Score: 24
+24, Resource: 24, Storage: 26, Bandwidth: 0, Score: 19
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 26, Storage: 34, Bandwidth: 11, Score: 25
+24, Resource: 24, Storage: 26, Bandwidth: 8, Score: 21
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 26, Storage: 34, Bandwidth: 11, Score: 25
+24, Resource: 24, Storage: 26, Bandwidth: 8, Score: 21
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 26, Storage: 34, Bandwidth: 10, Score: 25
+24, Resource: 24, Storage: 26, Bandwidth: 2, Score: 20
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 26, Storage: 34, Bandwidth: 10, Score: 25
+24, Resource: 24, Storage: 26, Bandwidth: 2, Score: 20
+-------------------------
+669
+WSM Sent: 612
+699
+WSM Sent: 612
+4647
+WSM Sent: 612
+** Event #13097216   t=352.200114413108   Elapsed: 35.1861s (0m 35s)  35% completed  (35% total)
+     Speed:     ev/sec=375957   simsec/sec=6.1983   ev/simsec=60654.8
+     Messages:  created: 7024747   present: 15687   in FES: 2166
+1371
+WSM Sent: 623
+4113
+WSM Sent: 623
+** Event #13467392   t=359.054149313283   Elapsed: 36.1862s (0m 36s)  35% completed  (35% total)
+     Speed:     ev/sec=370132   simsec/sec=6.85321   ev/simsec=54008.5
+     Messages:  created: 7234533   present: 16381   in FES: 2695
+2445
+WSM Sent: 638
+2367
+WSM Sent: 655
+2457
+WSM Sent: 655
+2433
+WSM Sent: 655
+1215
+WSM Sent: 655
+597
+WSM Sent: 676
+** Event #13832192   t=366.000013346062   Elapsed: 37.1957s (0m 37s)  36% completed  (36% total)
+     Speed:     ev/sec=361381   simsec/sec=6.88077   ev/simsec=52520.5
+     Messages:  created: 7440417   present: 15927   in FES: 2536
+2847
+WSM Sent: 676
+3183
+WSM Sent: 676
+489
+WSM Sent: 676
+4359
+WSM Sent: 684
+4551
+WSM Sent: 684
+4641
+WSM Sent: 684
+1689
+WSM Sent: 684
+2169
+WSM Sent: 684
+4221
+WSM Sent: 684
+** Event #14272768   t=374.6000954447   Elapsed: 38.1959s (0m 38s)  37% completed  (37% total)
+     Speed:     ev/sec=440487   simsec/sec=8.59835   ev/simsec=51229.3
+     Messages:  created: 7686058   present: 14939   in FES: 1692
+4833
+WSM Sent: 692
+237
+WSM Sent: 704
+2229
+WSM Sent: 727
+2625
+WSM Sent: 727
+** Event #14702336   t=383.054382824703   Elapsed: 39.1963s (0m 39s)  38% completed  (38% total)
+     Speed:     ev/sec=429391   simsec/sec=8.4508   ev/simsec=50810.7
+     Messages:  created: 7926261   present: 16182   in FES: 2701
+4017
+WSM Sent: 727
+4947
+WSM Sent: 736
+2679
+WSM Sent: 736
+3135
+WSM Sent: 736
+165
+WSM Sent: 750
+861
+WSM Sent: 750
+3147
+WSM Sent: 755
+** Event #15079424   t=392.000049078135   Elapsed: 40.2055s (0m 40s)  39% completed  (39% total)
+     Speed:     ev/sec=373657   simsec/sec=8.86427   ev/simsec=42153.1
+     Messages:  created: 8117078   present: 15560   in FES: 2489
+909
+WSM Sent: 766
+867
+WSM Sent: 766
+2073
+WSM Sent: 766
+3213
+WSM Sent: 766
+93
+WSM Sent: 774
+2055
+WSM Sent: 774
+** Event #15484928   t=399.100200126592   Elapsed: 41.2061s (0m 41s)  39% completed  (39% total)
+     Speed:     ev/sec=405262   simsec/sec=7.09591   ev/simsec=57112
+     Messages:  created: 8355847   present: 14631   in FES: 1656
+RL Enabled Probable Fogs: 
+19, Resource: 18, Storage: 21, Bandwidth: 3, Score: 15
+24, Resource: 34, Storage: 35, Bandwidth: 6, Score: 28
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 18, Storage: 21, Bandwidth: 3, Score: 15
+24, Resource: 34, Storage: 35, Bandwidth: 6, Score: 28
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 18, Storage: 21, Bandwidth: 6, Score: 16
+24, Resource: 34, Storage: 35, Bandwidth: 0, Score: 27
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 18, Storage: 21, Bandwidth: 6, Score: 16
+24, Resource: 34, Storage: 35, Bandwidth: 0, Score: 27
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 18, Storage: 21, Bandwidth: 11, Score: 17
+24, Resource: 34, Storage: 35, Bandwidth: 8, Score: 29
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 18, Storage: 21, Bandwidth: 11, Score: 17
+24, Resource: 34, Storage: 35, Bandwidth: 8, Score: 29
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 18, Storage: 21, Bandwidth: 10, Score: 17
+24, Resource: 34, Storage: 35, Bandwidth: 2, Score: 27
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 18, Storage: 21, Bandwidth: 10, Score: 17
+24, Resource: 34, Storage: 35, Bandwidth: 2, Score: 27
+-------------------------
+2523
+WSM Sent: 785
+3813
+WSM Sent: 785
+345
+WSM Sent: 785
+1953
+WSM Sent: 802
+** Event #15898368   t=407.100168789905   Elapsed: 42.2065s (0m 42s)  40% completed  (40% total)
+     Speed:     ev/sec=413279   simsec/sec=7.99686   ev/simsec=51680.2
+     Messages:  created: 8590933   present: 14558   in FES: 1647
+1089
+WSM Sent: 818
+3309
+WSM Sent: 818
+4539
+WSM Sent: 818
+5073
+WSM Sent: 818
+3999
+WSM Sent: 824
+4671
+WSM Sent: 824
+** Event #16337408   t=416.900252702277   Elapsed: 43.2068s (0m 43s)  41% completed  (41% total)
+     Speed:     ev/sec=438893   simsec/sec=9.79681   ev/simsec=44799.6
+     Messages:  created: 8823464   present: 14450   in FES: 1635
+537
+WSM Sent: 839
+4341
+WSM Sent: 839
+2463
+WSM Sent: 858
+1749
+WSM Sent: 858
+** Event #16766208   t=425.400220416459   Elapsed: 44.2069s (0m 44s)  42% completed  (42% total)
+     Speed:     ev/sec=428745   simsec/sec=8.49888   ev/simsec=50447.3
+     Messages:  created: 9066158   present: 14429   in FES: 1678
+4191
+WSM Sent: 870
+873
+WSM Sent: 870
+2487
+WSM Sent: 870
+2217
+WSM Sent: 877
+3675
+WSM Sent: 877
+** Event #17184512   t=432.2717393695   Elapsed: 45.2073s (0m 45s)  43% completed  (43% total)
+     Speed:     ev/sec=418141   simsec/sec=6.86884   ev/simsec=60875
+     Messages:  created: 9320511   present: 14679   in FES: 1982
+531
+WSM Sent: 901
+1539
+WSM Sent: 910
+1563
+WSM Sent: 910
+1701
+WSM Sent: 910
+3099
+WSM Sent: 910
+2337
+WSM Sent: 910
+4203
+WSM Sent: 910
+** Event #17600256   t=440   Elapsed: 46.2121s (0m 46s)  44% completed  (43% total)
+     Speed:     ev/sec=413771   simsec/sec=7.69159   ev/simsec=53795.3
+     Messages:  created: 9562381   present: 14361   in FES: 1802
+2721
+WSM Sent: 910
+69
+WSM Sent: 910
+2235
+WSM Sent: 910
+1341
+WSM Sent: 925
+1383
+WSM Sent: 925
+5349
+WSM Sent: 925
+147
+WSM Sent: 925
+** Event #17990144   t=446.054392252224   Elapsed: 47.2125s (0m 47s)  44% completed  (44% total)
+     Speed:     ev/sec=389725   simsec/sec=6.05186   ev/simsec=64397.5
+     Messages:  created: 9804625   present: 15316   in FES: 2567
+975
+WSM Sent: 925
+3987
+WSM Sent: 925
+273
+WSM Sent: 936
+4365
+WSM Sent: 936
+RL Enabled Probable Fogs: 
+19, Resource: 44, Storage: 54, Bandwidth: 3, Score: 38
+24, Resource: 39, Storage: 29, Bandwidth: 6, Score: 29
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 44, Storage: 54, Bandwidth: 3, Score: 38
+24, Resource: 39, Storage: 29, Bandwidth: 6, Score: 29
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 44, Storage: 54, Bandwidth: 6, Score: 39
+24, Resource: 39, Storage: 29, Bandwidth: 0, Score: 28
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 44, Storage: 54, Bandwidth: 6, Score: 39
+24, Resource: 39, Storage: 29, Bandwidth: 0, Score: 28
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 44, Storage: 54, Bandwidth: 11, Score: 40
+24, Resource: 39, Storage: 29, Bandwidth: 8, Score: 29
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 44, Storage: 54, Bandwidth: 11, Score: 40
+24, Resource: 39, Storage: 29, Bandwidth: 8, Score: 29
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 44, Storage: 54, Bandwidth: 10, Score: 40
+24, Resource: 39, Storage: 29, Bandwidth: 2, Score: 28
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 44, Storage: 54, Bandwidth: 10, Score: 40
+24, Resource: 39, Storage: 29, Bandwidth: 2, Score: 28
+-------------------------
+1479
+WSM Sent: 947
+** Event #18454784   t=452.054928865414   Elapsed: 48.2129s (0m 48s)  45% completed  (45% total)
+     Speed:     ev/sec=464459   simsec/sec=5.9982   ev/simsec=77433.1
+     Messages:  created: 10109845   present: 14614   in FES: 2166
+303
+WSM Sent: 947
+4695
+WSM Sent: 947
+621
+WSM Sent: 955
+3549
+WSM Sent: 955
+1401
+WSM Sent: 955
+1989
+WSM Sent: 955
+2043
+WSM Sent: 955
+675
+WSM Sent: 955
+1059
+WSM Sent: 967
+** Event #18904576   t=460.000095757789   Elapsed: 49.2138s (0m 49s)  46% completed  (46% total)
+     Speed:     ev/sec=449396   simsec/sec=7.93817   ev/simsec=56612
+     Messages:  created: 10380055   present: 14542   in FES: 2319
+1773
+WSM Sent: 967
+3069
+WSM Sent: 967
+393
+WSM Sent: 967
+2019
+WSM Sent: 967
+1509
+WSM Sent: 976
+1833
+WSM Sent: 976
+789
+WSM Sent: 989
+3849
+WSM Sent: 989
+3891
+WSM Sent: 989
+** Event #19283712   t=468.154628978024   Elapsed: 50.214s (0m 50s)  46% completed  (46% total)
+     Speed:     ev/sec=379052   simsec/sec=8.15273   ev/simsec=46493.9
+     Messages:  created: 10591084   present: 14195   in FES: 1885
+2139
+WSM Sent: 1012
+2823
+WSM Sent: 1012
+4287
+WSM Sent: 1012
+4239
+WSM Sent: 1012
+933
+WSM Sent: 1012
+663
+WSM Sent: 1012
+** Event #19690240   t=475.011724990588   Elapsed: 51.2146s (0m 51s)  47% completed  (47% total)
+     Speed:     ev/sec=406292   simsec/sec=6.85311   ev/simsec=59285.7
+     Messages:  created: 10838902   present: 14257   in FES: 2256
+2655
+WSM Sent: 1012
+381
+WSM Sent: 1025
+2289
+WSM Sent: 1025
+2751
+WSM Sent: 1025
+4581
+WSM Sent: 1025
+** Event #20039680   t=480.166539215496   Elapsed: 52.2147s (0m 52s)  48% completed  (48% total)
+     Speed:     ev/sec=349380   simsec/sec=5.15393   ev/simsec=67789.1
+     Messages:  created: 11062414   present: 13791   in FES: 1885
+1611
+WSM Sent: 1038
+1617
+WSM Sent: 1048
+1983
+WSM Sent: 1048
+5247
+WSM Sent: 1048
+5235
+WSM Sent: 1048
+267
+WSM Sent: 1048
+3255
+WSM Sent: 1048
+2901
+WSM Sent: 1056
+** Event #20555776   t=487.550070032404   Elapsed: 53.2151s (0m 53s)  48% completed  (48% total)
+     Speed:     ev/sec=515909   simsec/sec=7.38086   ev/simsec=69898.3
+     Messages:  created: 11396106   present: 13281   in FES: 1506
+4377
+WSM Sent: 1056
+4371
+WSM Sent: 1056
+309
+WSM Sent: 1060
+213
+WSM Sent: 1068
+1761
+WSM Sent: 1068
+2691
+WSM Sent: 1076
+** Event #21054976   t=495.00008158693   Elapsed: 54.2237s (0m 54s)  49% completed  (49% total)
+     Speed:     ev/sec=494959   simsec/sec=7.38671   ev/simsec=67006.6
+     Messages:  created: 11713980   present: 13906   in FES: 2227
+1845
+WSM Sent: 1092
+321
+WSM Sent: 1092
+RL Enabled Probable Fogs: 
+19, Resource: 38, Storage: 39, Bandwidth: 3, Score: 31
+24, Resource: 36, Storage: 38, Bandwidth: 6, Score: 30
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 38, Storage: 39, Bandwidth: 3, Score: 31
+24, Resource: 36, Storage: 38, Bandwidth: 6, Score: 30
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 38, Storage: 39, Bandwidth: 6, Score: 31
+24, Resource: 36, Storage: 38, Bandwidth: 0, Score: 29
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 38, Storage: 39, Bandwidth: 6, Score: 31
+24, Resource: 36, Storage: 38, Bandwidth: 0, Score: 29
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 38, Storage: 39, Bandwidth: 11, Score: 32
+24, Resource: 36, Storage: 38, Bandwidth: 8, Score: 31
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 38, Storage: 39, Bandwidth: 11, Score: 32
+24, Resource: 36, Storage: 38, Bandwidth: 8, Score: 31
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 38, Storage: 39, Bandwidth: 10, Score: 32
+24, Resource: 36, Storage: 38, Bandwidth: 2, Score: 29
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 38, Storage: 39, Bandwidth: 10, Score: 32
+24, Resource: 36, Storage: 38, Bandwidth: 2, Score: 29
+-------------------------
+4701
+WSM Sent: 1092
+285
+WSM Sent: 1092
+2259
+WSM Sent: 1092
+4413
+WSM Sent: 1092
+4863
+WSM Sent: 1092
+4089
+WSM Sent: 1092
+** Event #21495552   t=504.176967570508   Elapsed: 55.2239s (0m 55s)  50% completed  (50% total)
+     Speed:     ev/sec=440475   simsec/sec=9.17478   ev/simsec=48009.3
+     Messages:  created: 11967009   present: 13611   in FES: 2009
+1569
+WSM Sent: 1111
+1863
+WSM Sent: 1111
+4335
+WSM Sent: 1123
+4845
+WSM Sent: 1123
+3159
+WSM Sent: 1143
+339
+WSM Sent: 1143
+687
+WSM Sent: 1143
+** Event #21979904   t=512.054368438306   Elapsed: 56.2239s (0m 56s)  51% completed  (51% total)
+     Speed:     ev/sec=484344   simsec/sec=7.87727   ev/simsec=61486.3
+     Messages:  created: 12271448   present: 14076   in FES: 2366
+2097
+WSM Sent: 1150
+2961
+WSM Sent: 1150
+4053
+WSM Sent: 1150
+1941
+WSM Sent: 1150
+1191
+WSM Sent: 1150
+3729
+WSM Sent: 1150
+693
+WSM Sent: 1172
+** Event #22435328   t=522.180249679673   Elapsed: 57.2241s (0m 57s)  52% completed  (52% total)
+     Speed:     ev/sec=455326   simsec/sec=10.1237   ev/simsec=44976.2
+     Messages:  created: 12530158   present: 13395   in FES: 2067
+2697
+WSM Sent: 1182
+3237
+WSM Sent: 1182
+2991
+WSM Sent: 1188
+4305
+WSM Sent: 1188
+249
+WSM Sent: 1188
+3471
+WSM Sent: 1188
+3993
+WSM Sent: 1188
+3351
+WSM Sent: 1197
+3021
+WSM Sent: 1205
+1755
+WSM Sent: 1205
+** Event #22941440   t=531.000089484157   Elapsed: 58.2349s (0m 58s)  53% completed  (53% total)
+     Speed:     ev/sec=500737   simsec/sec=8.72617   ev/simsec=57383.4
+     Messages:  created: 12843243   present: 13286   in FES: 2119
+75
+WSM Sent: 1205
+4755
+WSM Sent: 1214
+951
+WSM Sent: 1220
+1659
+WSM Sent: 1220
+3513
+WSM Sent: 1220
+5397
+WSM Sent: 1220
+2241
+WSM Sent: 1220
+3807
+WSM Sent: 1220
+3339
+WSM Sent: 1220
+** Event #23435264   t=540.800192501031   Elapsed: 59.2349s (0m 59s)  54% completed  (54% total)
+     Speed:     ev/sec=493803   simsec/sec=9.79968   ev/simsec=50389.7
+     Messages:  created: 13138771   present: 12435   in FES: 1412
+561
+WSM Sent: 1234
+1323
+WSM Sent: 1234
+87
+WSM Sent: 1234
+2253
+WSM Sent: 1234
+471
+WSM Sent: 1245
+1977
+WSM Sent: 1257
+3747
+WSM Sent: 1257
+1473
+WSM Sent: 1257
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 37, Bandwidth: 3, Score: 29
+24, Resource: 21, Storage: 22, Bandwidth: 6, Score: 18
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 37, Bandwidth: 3, Score: 29
+24, Resource: 21, Storage: 22, Bandwidth: 6, Score: 18
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 37, Bandwidth: 6, Score: 29
+24, Resource: 21, Storage: 22, Bandwidth: 0, Score: 17
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 37, Bandwidth: 6, Score: 29
+24, Resource: 21, Storage: 22, Bandwidth: 0, Score: 17
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 37, Bandwidth: 11, Score: 30
+24, Resource: 21, Storage: 22, Bandwidth: 8, Score: 18
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 37, Bandwidth: 11, Score: 30
+24, Resource: 21, Storage: 22, Bandwidth: 8, Score: 18
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 37, Bandwidth: 10, Score: 30
+24, Resource: 21, Storage: 22, Bandwidth: 2, Score: 17
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 37, Bandwidth: 10, Score: 30
+24, Resource: 21, Storage: 22, Bandwidth: 2, Score: 17
+-------------------------
+3945
+WSM Sent: 1257
+4299
+WSM Sent: 1257
+** Event #23880448   t=551.080690369447   Elapsed: 60.2359s (1m 00s)  55% completed  (55% total)
+     Speed:     ev/sec=444765   simsec/sec=10.2708   ev/simsec=43303.7
+     Messages:  created: 13390483   present: 12367   in FES: 1498
+2145
+WSM Sent: 1257
+4623
+WSM Sent: 1257
+2799
+WSM Sent: 1257
+2985
+WSM Sent: 1264
+1533
+WSM Sent: 1272
+** Event #24299776   t=559.450245558433   Elapsed: 61.2364s (1m 01s)  55% completed  (55% total)
+     Speed:     ev/sec=419087   simsec/sec=8.36475   ev/simsec=50101.6
+     Messages:  created: 13642391   present: 12175   in FES: 1390
+1071
+WSM Sent: 1281
+2979
+WSM Sent: 1292
+5211
+WSM Sent: 1292
+201
+WSM Sent: 1298
+2619
+WSM Sent: 1298
+3795
+WSM Sent: 1298
+4449
+WSM Sent: 1298
+543
+WSM Sent: 1298
+2763
+WSM Sent: 1298
+** Event #24674816   t=568.10000838389   Elapsed: 62.2365s (1m 02s)  56% completed  (56% total)
+     Speed:     ev/sec=374998   simsec/sec=8.6488   ev/simsec=43358.4
+     Messages:  created: 13855985   present: 12002   in FES: 1363
+4803
+WSM Sent: 1298
+3711
+WSM Sent: 1307
+1407
+WSM Sent: 1307
+3453
+WSM Sent: 1307
+3387
+WSM Sent: 1314
+3705
+WSM Sent: 1314
+5439
+WSM Sent: 1314
+3759
+WSM Sent: 1314
+2907
+WSM Sent: 1321
+** Event #25116928   t=576.278604329896   Elapsed: 63.2366s (1m 03s)  57% completed  (57% total)
+     Speed:     ev/sec=442100   simsec/sec=8.17838   ev/simsec=54057.2
+     Messages:  created: 14130036   present: 12129   in FES: 1497
+1029
+WSM Sent: 1326
+2577
+WSM Sent: 1326
+1779
+WSM Sent: 1326
+1497
+WSM Sent: 1332
+1719
+WSM Sent: 1332
+2871
+WSM Sent: 1332
+4797
+WSM Sent: 1332
+5253
+WSM Sent: 1332
+5187
+WSM Sent: 1332
+1797
+WSM Sent: 1332
+** Event #25524480   t=585.255253044792   Elapsed: 64.2366s (1m 04s)  58% completed  (58% total)
+     Speed:     ev/sec=407540   simsec/sec=8.97638   ev/simsec=45401.4
+     Messages:  created: 14369533   present: 12969   in FES: 1849
+1551
+WSM Sent: 1348
+1737
+WSM Sent: 1348
+3393
+WSM Sent: 1348
+4107
+WSM Sent: 1348
+657
+WSM Sent: 1350
+2439
+WSM Sent: 1350
+2469
+WSM Sent: 1350
+4659
+WSM Sent: 1350
+4791
+WSM Sent: 1350
+651
+WSM Sent: 1361
+3771
+WSM Sent: 1361
+** Event #25947392   t=594.054955992386   Elapsed: 65.2369s (1m 05s)  59% completed  (59% total)
+     Speed:     ev/sec=422768   simsec/sec=8.79671   ev/simsec=48059.8
+     Messages:  created: 14624256   present: 11905   in FES: 1713
+1503
+WSM Sent: 1373
+1923
+WSM Sent: 1373
+5085
+WSM Sent: 1373
+423
+WSM Sent: 1373
+2787
+WSM Sent: 1381
+3465
+WSM Sent: 1381
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 40, Bandwidth: 3, Score: 26
+24, Resource: 25, Storage: 24, Bandwidth: 6, Score: 20
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 40, Bandwidth: 3, Score: 26
+24, Resource: 25, Storage: 24, Bandwidth: 6, Score: 20
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 40, Bandwidth: 6, Score: 27
+24, Resource: 25, Storage: 24, Bandwidth: 0, Score: 19
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 40, Bandwidth: 6, Score: 27
+24, Resource: 25, Storage: 24, Bandwidth: 0, Score: 19
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 40, Bandwidth: 11, Score: 28
+24, Resource: 25, Storage: 24, Bandwidth: 8, Score: 21
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 40, Bandwidth: 11, Score: 28
+24, Resource: 25, Storage: 24, Bandwidth: 8, Score: 21
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 40, Bandwidth: 10, Score: 28
+24, Resource: 25, Storage: 24, Bandwidth: 2, Score: 20
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 28, Storage: 40, Bandwidth: 10, Score: 28
+24, Resource: 25, Storage: 24, Bandwidth: 2, Score: 20
+-------------------------
+3129
+WSM Sent: 1381
+4485
+WSM Sent: 1381
+** Event #26436864   t=601   Elapsed: 66.2456s (1m 06s)  60% completed  (60% total)
+     Speed:     ev/sec=485245   simsec/sec=6.88506   ev/simsec=70477.9
+     Messages:  created: 14955705   present: 11539   in FES: 1508
+849
+WSM Sent: 1387
+987
+WSM Sent: 1387
+5199
+WSM Sent: 1387
+1815
+WSM Sent: 1391
+4119
+WSM Sent: 1391
+4839
+WSM Sent: 1391
+3777
+WSM Sent: 1391
+1605
+WSM Sent: 1391
+2631
+WSM Sent: 1391
+3765
+WSM Sent: 1398
+1557
+WSM Sent: 1398
+4215
+WSM Sent: 1398
+1935
+WSM Sent: 1398
+** Event #26816000   t=611.054937477216   Elapsed: 67.2459s (1m 07s)  61% completed  (61% total)
+     Speed:     ev/sec=379033   simsec/sec=10.0522   ev/simsec=37706.5
+     Messages:  created: 15165903   present: 11495   in FES: 1630
+1767
+WSM Sent: 1403
+1017
+WSM Sent: 1420
+4707
+WSM Sent: 1420
+885
+WSM Sent: 1420
+3663
+WSM Sent: 1420
+4827
+WSM Sent: 1420
+459
+WSM Sent: 1428
+** Event #27230976   t=618   Elapsed: 68.2463s (1m 08s)  61% completed  (61% total)
+     Speed:     ev/sec=414818   simsec/sec=6.94241   ev/simsec=59751.2
+     Messages:  created: 15438110   present: 11009   in FES: 1298
+4179
+WSM Sent: 1430
+4743
+WSM Sent: 1430
+3003
+WSM Sent: 1442
+1545
+WSM Sent: 1442
+4263
+WSM Sent: 1442
+4677
+WSM Sent: 1442
+2535
+WSM Sent: 1442
+4143
+WSM Sent: 1442
+** Event #27572736   t=629.054425670985   Elapsed: 69.2465s (1m 09s)  62% completed  (62% total)
+     Speed:     ev/sec=341694   simsec/sec=11.0523   ev/simsec=30916.1
+     Messages:  created: 15610173   present: 11790   in FES: 1992
+1041
+WSM Sent: 1447
+4719
+WSM Sent: 1447
+1809
+WSM Sent: 1471
+2187
+WSM Sent: 1471
+5379
+WSM Sent: 1471
+141
+WSM Sent: 1477
+2247
+WSM Sent: 1477
+4155
+WSM Sent: 1477
+** Event #27991296   t=639.500203579755   Elapsed: 70.2469s (1m 10s)  63% completed  (63% total)
+     Speed:     ev/sec=418391   simsec/sec=10.4416   ev/simsec=40069.8
+     Messages:  created: 15852331   present: 10672   in FES: 1217
+1311
+WSM Sent: 1477
+3501
+WSM Sent: 1477
+3717
+WSM Sent: 1484
+5055
+WSM Sent: 1488
+411
+WSM Sent: 1503
+2931
+WSM Sent: 1503
+3687
+WSM Sent: 1503
+4767
+WSM Sent: 1503
+4941
+WSM Sent: 1507
+** Event #28427520   t=649.00009047959   Elapsed: 71.263s (1m 11s)  64% completed  (64% total)
+     Speed:     ev/sec=429312   simsec/sec=9.34936   ev/simsec=45918.9
+     Messages:  created: 16120449   present: 11084   in FES: 1773
+RL Enabled Probable Fogs: 
+19, Resource: 22, Storage: 27, Bandwidth: 3, Score: 19
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 22, Storage: 27, Bandwidth: 3, Score: 19
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 22, Storage: 27, Bandwidth: 2, Score: 19
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 22, Storage: 27, Bandwidth: 2, Score: 19
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 22, Storage: 27, Bandwidth: 6, Score: 20
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 22, Storage: 27, Bandwidth: 6, Score: 20
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 22, Storage: 27, Bandwidth: 11, Score: 21
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 22, Storage: 27, Bandwidth: 11, Score: 21
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 22, Storage: 27, Bandwidth: 10, Score: 21
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 22, Storage: 27, Bandwidth: 10, Score: 21
+-------------------------
+1023
+WSM Sent: 1507
+3867
+WSM Sent: 1507
+3081
+WSM Sent: 1513
+4023
+WSM Sent: 1513
+5019
+WSM Sent: 1513
+5385
+WSM Sent: 1513
+4809
+WSM Sent: 1513
+777
+WSM Sent: 1513
+3009
+WSM Sent: 1513
+3447
+WSM Sent: 1513
+609
+WSM Sent: 1513
+4197
+WSM Sent: 1520
+2973
+WSM Sent: 1520
+759
+WSM Sent: 1523
+1257
+WSM Sent: 1523
+3483
+WSM Sent: 1523
+** Event #28833024   t=660.000134810755   Elapsed: 72.2686s (1m 12s)  66% completed  (66% total)
+     Speed:     ev/sec=403240   simsec/sec=10.9386   ev/simsec=36863.9
+     Messages:  created: 16350232   present: 10793   in FES: 1738
+1305
+WSM Sent: 1534
+1905
+WSM Sent: 1534
+** Event #29198592   t=665.000000850396   Elapsed: 73.3251s (1m 13s)  66% completed  (66% total)
+     Speed:     ev/sec=346038   simsec/sec=4.73276   ev/simsec=73115.6
+     Messages:  created: 16603419   present: 10740   in FES: 1717
+189
+WSM Sent: 1565
+4995
+WSM Sent: 1565
+117
+WSM Sent: 1565
+4407
+WSM Sent: 1565
+3321
+WSM Sent: 1565
+1971
+WSM Sent: 1582
+** Event #29629952   t=674.070089242828   Elapsed: 74.3252s (1m 14s)  67% completed  (67% total)
+     Speed:     ev/sec=431289   simsec/sec=9.0686   ev/simsec=47558.5
+     Messages:  created: 16873968   present: 10227   in FES: 1298
+1449
+WSM Sent: 1582
+297
+WSM Sent: 1595
+2067
+WSM Sent: 1595
+171
+WSM Sent: 1595
+243
+WSM Sent: 1595
+1077
+WSM Sent: 1595
+1167
+WSM Sent: 1595
+1227
+WSM Sent: 1600
+4821
+WSM Sent: 1600
+5025
+WSM Sent: 1600
+** Event #30024448   t=684.054458538046   Elapsed: 75.3254s (1m 15s)  68% completed  (68% total)
+     Speed:     ev/sec=394410   simsec/sec=9.98218   ev/simsec=39511.4
+     Messages:  created: 17106864   present: 10834   in FES: 1883
+4491
+WSM Sent: 1609
+291
+WSM Sent: 1609
+4521
+WSM Sent: 1617
+4479
+WSM Sent: 1633
+3279
+WSM Sent: 1640
+** Event #30562816   t=692.000117892998   Elapsed: 76.3385s (1m 16s)  69% completed  (69% total)
+     Speed:     ev/sec=531442   simsec/sec=7.84344   ev/simsec=67756.2
+     Messages:  created: 17475823   present: 10343   in FES: 1656
+1263
+WSM Sent: 1640
+801
+WSM Sent: 1640
+1647
+WSM Sent: 1640
+2739
+WSM Sent: 1640
+1869
+WSM Sent: 1640
+1875
+WSM Sent: 1646
+1641
+WSM Sent: 1646
+1821
+WSM Sent: 1646
+4401
+WSM Sent: 1646
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 31, Bandwidth: 3, Score: 27
+24, Resource: 19, Storage: 18, Bandwidth: 6, Score: 16
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 31, Bandwidth: 3, Score: 27
+24, Resource: 19, Storage: 18, Bandwidth: 6, Score: 16
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 31, Bandwidth: 2, Score: 27
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 31, Bandwidth: 2, Score: 27
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 31, Bandwidth: 6, Score: 27
+24, Resource: 19, Storage: 18, Bandwidth: 0, Score: 14
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 31, Bandwidth: 6, Score: 27
+24, Resource: 19, Storage: 18, Bandwidth: 0, Score: 14
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 31, Bandwidth: 11, Score: 28
+24, Resource: 19, Storage: 18, Bandwidth: 8, Score: 16
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 31, Bandwidth: 11, Score: 28
+24, Resource: 19, Storage: 18, Bandwidth: 8, Score: 16
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 31, Bandwidth: 10, Score: 28
+24, Resource: 19, Storage: 18, Bandwidth: 2, Score: 15
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 35, Storage: 31, Bandwidth: 10, Score: 28
+24, Resource: 19, Storage: 18, Bandwidth: 2, Score: 15
+-------------------------
+375
+WSM Sent: 1646
+** Event #31053312   t=703.070097916195   Elapsed: 77.3385s (1m 17s)  70% completed  (70% total)
+     Speed:     ev/sec=490496   simsec/sec=11.07   ev/simsec=44308.7
+     Messages:  created: 17781085   present: 9774   in FES: 1245
+5205
+WSM Sent: 1667
+2865
+WSM Sent: 1675
+4167
+WSM Sent: 1675
+4779
+WSM Sent: 1683
+5229
+WSM Sent: 1683
+5265
+WSM Sent: 1683
+4467
+WSM Sent: 1683
+4989
+WSM Sent: 1683
+** Event #31553280   t=714.254117287338   Elapsed: 78.3385s (1m 18s)  71% completed  (71% total)
+     Speed:     ev/sec=499951   simsec/sec=11.1836   ev/simsec=44703.8
+     Messages:  created: 18095196   present: 11412   in FES: 1619
+2649
+WSM Sent: 1699
+627
+WSM Sent: 1700
+4353
+WSM Sent: 1700
+4137
+WSM Sent: 1700
+5139
+WSM Sent: 1700
+3177
+WSM Sent: 1700
+3873
+WSM Sent: 1700
+** Event #32040704   t=723   Elapsed: 79.3554s (1m 19s)  72% completed  (72% total)
+     Speed:     ev/sec=479349   simsec/sec=8.601   ev/simsec=55731.8
+     Messages:  created: 18420638   present: 9866   in FES: 1579
+1221
+WSM Sent: 1728
+2295
+WSM Sent: 1728
+2949
+WSM Sent: 1728
+2409
+WSM Sent: 1735
+2037
+WSM Sent: 1735
+3141
+WSM Sent: 1735
+3957
+WSM Sent: 1735
+753
+WSM Sent: 1742
+495
+WSM Sent: 1742
+** Event #32422912   t=735.450126786855   Elapsed: 80.3556s (1m 20s)  73% completed  (73% total)
+     Speed:     ev/sec=382128   simsec/sec=12.4475   ev/simsec=30699.1
+     Messages:  created: 18631612   present: 9234   in FES: 1063
+1443
+WSM Sent: 1749
+5259
+WSM Sent: 1749
+3249
+WSM Sent: 1755
+279
+WSM Sent: 1755
+2817
+WSM Sent: 1755
+1917
+WSM Sent: 1762
+2007
+WSM Sent: 1762
+5013
+WSM Sent: 1762
+1929
+WSM Sent: 1762
+369
+WSM Sent: 1762
+981
+WSM Sent: 1768
+4875
+WSM Sent: 1768
+5415
+WSM Sent: 1778
+4437
+WSM Sent: 1778
+** Event #32819456   t=746.950104501089   Elapsed: 81.356s (1m 21s)  74% completed  (74% total)
+     Speed:     ev/sec=396369   simsec/sec=11.4949   ev/simsec=34482.2
+     Messages:  created: 18865118   present: 8942   in FES: 1023
+417
+WSM Sent: 1778
+RL Enabled Probable Fogs: 
+19, Resource: 21, Storage: 29, Bandwidth: 3, Score: 19
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 21, Storage: 29, Bandwidth: 3, Score: 19
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 21, Storage: 29, Bandwidth: 2, Score: 19
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 21, Storage: 29, Bandwidth: 2, Score: 19
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 21, Storage: 29, Bandwidth: 6, Score: 20
+24, Resource: 15, Storage: 23, Bandwidth: 0, Score: 14
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 21, Storage: 29, Bandwidth: 6, Score: 20
+24, Resource: 15, Storage: 23, Bandwidth: 0, Score: 14
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 21, Storage: 29, Bandwidth: 11, Score: 21
+24, Resource: 15, Storage: 23, Bandwidth: 8, Score: 15
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 21, Storage: 29, Bandwidth: 11, Score: 21
+24, Resource: 15, Storage: 23, Bandwidth: 8, Score: 15
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 21, Storage: 29, Bandwidth: 10, Score: 21
+24, Resource: 15, Storage: 23, Bandwidth: 2, Score: 14
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 21, Storage: 29, Bandwidth: 10, Score: 21
+24, Resource: 15, Storage: 23, Bandwidth: 2, Score: 14
+-------------------------
+183
+WSM Sent: 1786
+2355
+WSM Sent: 1791
+5175
+WSM Sent: 1801
+429
+WSM Sent: 1801
+2529
+WSM Sent: 1801
+3093
+WSM Sent: 1810
+921
+WSM Sent: 1810
+** Event #33215744   t=758.060729586269   Elapsed: 82.3562s (1m 22s)  75% completed  (75% total)
+     Speed:     ev/sec=396219   simsec/sec=11.1087   ev/simsec=35667.5
+     Messages:  created: 19104283   present: 8980   in FES: 1187
+783
+WSM Sent: 1829
+3801
+WSM Sent: 1829
+4689
+WSM Sent: 1829
+5037
+WSM Sent: 1829
+3231
+WSM Sent: 1829
+3243
+WSM Sent: 1829
+3567
+WSM Sent: 1829
+1131
+WSM Sent: 1829
+5331
+WSM Sent: 1829
+2703
+WSM Sent: 1829
+4503
+WSM Sent: 1829
+3219
+WSM Sent: 1829
+207
+WSM Sent: 1844
+2565
+WSM Sent: 1844
+705
+WSM Sent: 1844
+4629
+WSM Sent: 1844
+639
+WSM Sent: 1851
+4749
+WSM Sent: 1856
+1125
+WSM Sent: 1856
+** Event #33589504   t=770.356374887116   Elapsed: 83.3565s (1m 23s)  77% completed  (77% total)
+     Speed:     ev/sec=373623   simsec/sec=12.2911   ev/simsec=30397.8
+     Messages:  created: 19317299   present: 8501   in FES: 992
+4569
+WSM Sent: 1862
+3645
+WSM Sent: 1862
+1965
+WSM Sent: 1862
+5403
+WSM Sent: 1869
+4785
+WSM Sent: 1869
+4905
+WSM Sent: 1869
+3303
+WSM Sent: 1869
+3939
+WSM Sent: 1869
+1707
+WSM Sent: 1869
+1203
+WSM Sent: 1882
+** Event #33938176   t=783.054297286129   Elapsed: 84.3568s (1m 24s)  78% completed  (78% total)
+     Speed:     ev/sec=348572   simsec/sec=12.6943   ev/simsec=27459
+     Messages:  created: 19509314   present: 9033   in FES: 1534
+3225
+WSM Sent: 1882
+825
+WSM Sent: 1895
+591
+WSM Sent: 1895
+4635
+WSM Sent: 1895
+153
+WSM Sent: 1900
+2997
+WSM Sent: 1900
+2349
+WSM Sent: 1907
+4461
+WSM Sent: 1907
+3189
+WSM Sent: 1909
+** Event #34314496   t=797.000005937905   Elapsed: 85.3698s (1m 25s)  79% completed  (79% total)
+     Speed:     ev/sec=371516   simsec/sec=13.7677   ev/simsec=26984.6
+     Messages:  created: 19716810   present: 8557   in FES: 1374
+3267
+WSM Sent: 1909
+RL Enabled Probable Fogs: 
+19, Resource: 29, Storage: 40, Bandwidth: 3, Score: 27
+24, Resource: 27, Storage: 20, Bandwidth: 6, Score: 20
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 29, Storage: 40, Bandwidth: 3, Score: 27
+24, Resource: 27, Storage: 20, Bandwidth: 6, Score: 20
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 29, Storage: 40, Bandwidth: 6, Score: 27
+24, Resource: 27, Storage: 20, Bandwidth: 0, Score: 19
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 29, Storage: 40, Bandwidth: 6, Score: 27
+24, Resource: 27, Storage: 20, Bandwidth: 0, Score: 19
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 29, Storage: 40, Bandwidth: 11, Score: 28
+24, Resource: 27, Storage: 20, Bandwidth: 8, Score: 21
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 29, Storage: 40, Bandwidth: 11, Score: 28
+24, Resource: 27, Storage: 20, Bandwidth: 8, Score: 21
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 29, Storage: 40, Bandwidth: 10, Score: 28
+24, Resource: 27, Storage: 20, Bandwidth: 2, Score: 19
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 29, Storage: 40, Bandwidth: 10, Score: 28
+24, Resource: 27, Storage: 20, Bandwidth: 2, Score: 19
+-------------------------
+4443
+WSM Sent: 1930
+123
+WSM Sent: 1938
+1629
+WSM Sent: 1938
+1389
+WSM Sent: 1938
+3603
+WSM Sent: 1938
+3897
+WSM Sent: 1938
+3285
+WSM Sent: 1938
+5127
+WSM Sent: 1938
+1713
+WSM Sent: 1938
+177
+WSM Sent: 1948
+2745
+WSM Sent: 1948
+3495
+WSM Sent: 1948
+** Event #34694656   t=810.256152354334   Elapsed: 86.3699s (1m 26s)  81% completed  (81% total)
+     Speed:     ev/sec=380112   simsec/sec=13.2545   ev/simsec=28678
+     Messages:  created: 19935512   present: 8145   in FES: 1055
+135
+WSM Sent: 1957
+1887
+WSM Sent: 1957
+3783
+WSM Sent: 1962
+5421
+WSM Sent: 1962
+2181
+WSM Sent: 1962
+4077
+WSM Sent: 1962
+795
+WSM Sent: 1962
+2127
+WSM Sent: 1976
+351
+WSM Sent: 1984
+723
+WSM Sent: 1984
+3195
+WSM Sent: 1984
+5109
+WSM Sent: 1984
+2841
+WSM Sent: 1984
+1011
+WSM Sent: 1984
+2001
+WSM Sent: 1984
+2775
+WSM Sent: 1984
+** Event #35052800   t=825.000111065859   Elapsed: 87.3752s (1m 27s)  82% completed  (82% total)
+     Speed:     ev/sec=356238   simsec/sec=14.6655   ev/simsec=24290.9
+     Messages:  created: 20129381   present: 8014   in FES: 1295
+4005
+WSM Sent: 1994
+3375
+WSM Sent: 2001
+2889
+WSM Sent: 2007
+5001
+WSM Sent: 2007
+1245
+WSM Sent: 2033
+5067
+WSM Sent: 2033
+2157
+WSM Sent: 2033
+1239
+WSM Sent: 2033
+1593
+WSM Sent: 2033
+2805
+WSM Sent: 2033
+3297
+WSM Sent: 2033
+3543
+WSM Sent: 2033
+1437
+WSM Sent: 2040
+** Event #35462400   t=841.000094687095   Elapsed: 88.3821s (1m 28s)  84% completed  (84% total)
+     Speed:     ev/sec=406792   simsec/sec=15.8903   ev/simsec=25600
+     Messages:  created: 20360638   present: 7759   in FES: 1248
+1299
+WSM Sent: 2040
+2883
+WSM Sent: 2040
+3579
+WSM Sent: 2040
+5217
+WSM Sent: 2048
+3843
+WSM Sent: 2053
+RL Enabled Probable Fogs: 
+19, Resource: 30, Storage: 32, Bandwidth: 3, Score: 25
+24, Resource: 33, Storage: 40, Bandwidth: 6, Score: 29
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 30, Storage: 32, Bandwidth: 3, Score: 25
+24, Resource: 33, Storage: 40, Bandwidth: 6, Score: 29
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 30, Storage: 32, Bandwidth: 6, Score: 25
+24, Resource: 33, Storage: 40, Bandwidth: 0, Score: 28
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 30, Storage: 32, Bandwidth: 6, Score: 25
+24, Resource: 33, Storage: 40, Bandwidth: 0, Score: 28
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 30, Storage: 32, Bandwidth: 11, Score: 26
+24, Resource: 33, Storage: 40, Bandwidth: 8, Score: 30
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 30, Storage: 32, Bandwidth: 11, Score: 26
+24, Resource: 33, Storage: 40, Bandwidth: 8, Score: 30
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 30, Storage: 32, Bandwidth: 10, Score: 26
+24, Resource: 33, Storage: 40, Bandwidth: 2, Score: 28
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 30, Storage: 32, Bandwidth: 10, Score: 26
+24, Resource: 33, Storage: 40, Bandwidth: 2, Score: 28
+-------------------------
+579
+WSM Sent: 2061
+1173
+WSM Sent: 2061
+2115
+WSM Sent: 2061
+4953
+WSM Sent: 2067
+2505
+WSM Sent: 2067
+2583
+WSM Sent: 2067
+405
+WSM Sent: 2067
+2151
+WSM Sent: 2075
+4587
+WSM Sent: 2075
+1137
+WSM Sent: 2086
+** Event #35849984   t=856.000112165192   Elapsed: 89.3871s (1m 29s)  85% completed  (85% total)
+     Speed:     ev/sec=385683   simsec/sec=14.9264   ev/simsec=25838.9
+     Messages:  created: 20584411   present: 7474   in FES: 1203
+1623
+WSM Sent: 2086
+5151
+WSM Sent: 2086
+3693
+WSM Sent: 2087
+3903
+WSM Sent: 2087
+1947
+WSM Sent: 2087
+4323
+WSM Sent: 2087
+645
+WSM Sent: 2087
+2013
+WSM Sent: 2087
+1107
+WSM Sent: 2087
+525
+WSM Sent: 2098
+3651
+WSM Sent: 2098
+2103
+WSM Sent: 2109
+1455
+WSM Sent: 2112
+2547
+WSM Sent: 2112
+4881
+WSM Sent: 2115
+** Event #36236288   t=874.000004323   Elapsed: 90.4024s (1m 30s)  87% completed  (87% total)
+     Speed:     ev/sec=380470   simsec/sec=17.7281   ev/simsec=21461.5
+     Messages:  created: 20791746   present: 7189   in FES: 1158
+2733
+WSM Sent: 2115
+5163
+WSM Sent: 2115
+2919
+WSM Sent: 2115
+4593
+WSM Sent: 2115
+2025
+WSM Sent: 2115
+4971
+WSM Sent: 2115
+2415
+WSM Sent: 2118
+5049
+WSM Sent: 2118
+4977
+WSM Sent: 2130
+2385
+WSM Sent: 2150
+2517
+WSM Sent: 2150
+2613
+WSM Sent: 2150
+4515
+WSM Sent: 2150
+435
+WSM Sent: 2150
+3477
+WSM Sent: 2150
+465
+WSM Sent: 2150
+** Event #36599552   t=893   Elapsed: 91.414s (1m 31s)  89% completed  (89% total)
+     Speed:     ev/sec=359102   simsec/sec=18.7823   ev/simsec=19119.2
+     Messages:  created: 20977760   present: 6609   in FES: 834
+1365
+WSM Sent: 2150
+2061
+WSM Sent: 2150
+5277
+WSM Sent: 2150
+2499
+WSM Sent: 2150
+4815
+WSM Sent: 2160
+RL Enabled Probable Fogs: 
+19, Resource: 30, Storage: 30, Bandwidth: 3, Score: 24
+24, Resource: 16, Storage: 20, Bandwidth: 6, Score: 15
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 30, Storage: 30, Bandwidth: 3, Score: 24
+24, Resource: 16, Storage: 20, Bandwidth: 6, Score: 15
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 30, Storage: 30, Bandwidth: 6, Score: 25
+24, Resource: 16, Storage: 20, Bandwidth: 0, Score: 14
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 30, Storage: 30, Bandwidth: 6, Score: 25
+24, Resource: 16, Storage: 20, Bandwidth: 0, Score: 14
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 30, Storage: 30, Bandwidth: 11, Score: 26
+24, Resource: 16, Storage: 20, Bandwidth: 8, Score: 15
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 30, Storage: 30, Bandwidth: 11, Score: 26
+24, Resource: 16, Storage: 20, Bandwidth: 8, Score: 15
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 30, Storage: 30, Bandwidth: 10, Score: 26
+24, Resource: 16, Storage: 20, Bandwidth: 2, Score: 14
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 30, Storage: 30, Bandwidth: 10, Score: 26
+24, Resource: 16, Storage: 20, Bandwidth: 2, Score: 14
+-------------------------
+4293
+WSM Sent: 2172
+3075
+WSM Sent: 2186
+4665
+WSM Sent: 2186
+5181
+WSM Sent: 2186
+5061
+WSM Sent: 2193
+5097
+WSM Sent: 2193
+3027
+WSM Sent: 2193
+3609
+WSM Sent: 2193
+** Event #36970752   t=911   Elapsed: 92.4255s (1m 32s)  91% completed  (91% total)
+     Speed:     ev/sec=366979   simsec/sec=17.7953   ev/simsec=20622.2
+     Messages:  created: 21182321   present: 6516   in FES: 949
+2301
+WSM Sent: 2204
+2511
+WSM Sent: 2204
+2943
+WSM Sent: 2209
+4527
+WSM Sent: 2209
+5115
+WSM Sent: 2209
+1827
+WSM Sent: 2209
+2643
+WSM Sent: 2212
+4533
+WSM Sent: 2221
+3975
+WSM Sent: 2233
+4011
+WSM Sent: 2233
+939
+WSM Sent: 2233
+** Event #37293056   t=928.360854022051   Elapsed: 93.4257s (1m 33s)  92% completed  (92% total)
+     Speed:     ev/sec=322228   simsec/sec=17.3567   ev/simsec=18565
+     Messages:  created: 21352766   present: 6228   in FES: 771
+3969
+WSM Sent: 2236
+513
+WSM Sent: 2242
+2781
+WSM Sent: 2242
+3669
+WSM Sent: 2242
+105
+WSM Sent: 2242
+2379
+WSM Sent: 2242
+2391
+WSM Sent: 2242
+2637
+WSM Sent: 2242
+2475
+WSM Sent: 2249
+4269
+WSM Sent: 2249
+261
+WSM Sent: 2254
+603
+WSM Sent: 2254
+4599
+WSM Sent: 2254
+567
+WSM Sent: 2254
+** Event #37598464   t=947.054940938749   Elapsed: 94.4262s (1m 34s)  94% completed  (94% total)
+     Speed:     ev/sec=305259   simsec/sec=18.685   ev/simsec=16337.1
+     Messages:  created: 21505307   present: 6073   in FES: 875
+1677
+WSM Sent: 2257
+RL Enabled Probable Fogs: 
+19, Resource: 33, Storage: 29, Bandwidth: 3, Score: 25
+24, Resource: 31, Storage: 22, Bandwidth: 6, Score: 23
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 33, Storage: 29, Bandwidth: 3, Score: 25
+24, Resource: 31, Storage: 22, Bandwidth: 6, Score: 23
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 33, Storage: 29, Bandwidth: 6, Score: 26
+24, Resource: 31, Storage: 22, Bandwidth: 0, Score: 22
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 33, Storage: 29, Bandwidth: 6, Score: 26
+24, Resource: 31, Storage: 22, Bandwidth: 0, Score: 22
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 33, Storage: 29, Bandwidth: 11, Score: 27
+24, Resource: 31, Storage: 22, Bandwidth: 8, Score: 23
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 33, Storage: 29, Bandwidth: 11, Score: 27
+24, Resource: 31, Storage: 22, Bandwidth: 8, Score: 23
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 33, Storage: 29, Bandwidth: 10, Score: 27
+24, Resource: 31, Storage: 22, Bandwidth: 2, Score: 22
+-------------------------
+RL Enabled Probable Fogs: 
+19, Resource: 33, Storage: 29, Bandwidth: 10, Score: 27
+24, Resource: 31, Storage: 22, Bandwidth: 2, Score: 22
+-------------------------
+2553
+WSM Sent: 2261
+5427
+WSM Sent: 2261
+1161
+WSM Sent: 2271
+5325
+WSM Sent: 2271
+3627
+WSM Sent: 2271
+3861
+WSM Sent: 2271
+4605
+WSM Sent: 2271
+5391
+WSM Sent: 2271
+1521
+WSM Sent: 2271
+2685
+WSM Sent: 2277
+3825
+WSM Sent: 2277
+4071
+WSM Sent: 2282
+** Event #37912576   t=970.000223689434   Elapsed: 95.4311s (1m 35s)  97% completed  (97% total)
+     Speed:     ev/sec=312579   simsec/sec=22.8333   ev/simsec=13689.6
+     Messages:  created: 21647721   present: 5914   in FES: 955
+927
+WSM Sent: 2284
+3837
+WSM Sent: 2284
+3051
+WSM Sent: 2288
+4095
+WSM Sent: 2293
+4761
+WSM Sent: 2293
+903
+WSM Sent: 2293
+4257
+WSM Sent: 2293
+5433
+WSM Sent: 2293
+1857
+WSM Sent: 2295
+5313
+WSM Sent: 2295
+1275
+WSM Sent: 2295
+2031
+WSM Sent: 2295
+327
+WSM Sent: 2295
+4563
+WSM Sent: 2295
+3735
+WSM Sent: 2297
+4161
+WSM Sent: 2297
+3273
+WSM Sent: 2299
+** Event #38248960   t=991.054300866785   Elapsed: 96.4314s (1m 36s)  99% completed  (99% total)
+     Speed:     ev/sec=336283   simsec/sec=21.0477   ev/simsec=15977.1
+     Messages:  created: 21823039   present: 5773   in FES: 982
+2967
+WSM Sent: 2303
+4455
+WSM Sent: 2306
+1995
+WSM Sent: 2310
+3915
+WSM Sent: 2310
+3561
+WSM Sent: 2310
+** Event #38353418   t=1000   Elapsed: 96.8325s (1m 36s)  100% completed  (100% total)
+     Speed:     ev/sec=260412   simsec/sec=22.3017   ev/simsec=11676.8
+     Messages:  created: 21867497   present: 5496   in FES: 889
+
+<!> Simulation time limit reached -- at t=1000s, event #38353418
+
+Calling finish() at end of Run #0...
+1581
+WSM Sent: 2310
+45
+WSM Sent: 2310
+333
+WSM Sent: 2310
+879
+WSM Sent: 2310
+2121
+WSM Sent: 2310
+3381
+WSM Sent: 2310
+1527
+WSM Sent: 2310
+2937
+WSM Sent: 2310
+1377
+WSM Sent: 2310
+2283
+WSM Sent: 2310
+51
+WSM Sent: 2310
+5103
+WSM Sent: 2310
+483
+WSM Sent: 2310
+3045
+WSM Sent: 2310
+5301
+WSM Sent: 2310
+1731
+WSM Sent: 2310
+4725
+WSM Sent: 2310
+1635
+WSM Sent: 2310
+4317
+WSM Sent: 2310
+1959
+WSM Sent: 2310
+3291
+WSM Sent: 2310
+2343
+WSM Sent: 2310
+549
+WSM Sent: 2310
+1491
+WSM Sent: 2310
+945
+WSM Sent: 2310
+4983
+WSM Sent: 2310
+399
+WSM Sent: 2310
+3405
+WSM Sent: 2310
+111
+WSM Sent: 2310
+2175
+WSM Sent: 2310
+4917
+WSM Sent: 2310
+1803
+WSM Sent: 2310
+711
+WSM Sent: 2310
+255
+WSM Sent: 2310
+999
+WSM Sent: 2310
+4059
+WSM Sent: 2310
+4227
+WSM Sent: 2310
+4959
+WSM Sent: 2310
+1893
+WSM Sent: 2310
+1317
+WSM Sent: 2310
+4251
+WSM Sent: 2310
+1053
+WSM Sent: 2310
+3429
+WSM Sent: 2310
+3315
+WSM Sent: 2310
+2661
+WSM Sent: 2310
+2205
+WSM Sent: 2310
+5043
+WSM Sent: 2310
+3963
+WSM Sent: 2310
+1347
+WSM Sent: 2310
+4557
+WSM Sent: 2310
+5355
+WSM Sent: 2310
+1461
+WSM Sent: 2310
+3153
+WSM Sent: 2310
+4851
+WSM Sent: 2310
+1743
+WSM Sent: 2310
+681
+WSM Sent: 2310
+519
+WSM Sent: 2310
+5169
+WSM Sent: 2310
+57
+WSM Sent: 2310
+4887
+WSM Sent: 2310
+2607
+WSM Sent: 2310
+4281
+WSM Sent: 2310
+4041
+WSM Sent: 2310
+3525
+WSM Sent: 2310
+1197
+WSM Sent: 2310
+5337
+WSM Sent: 2310
+3261
+WSM Sent: 2310
+1425
+WSM Sent: 2310
+3411
+WSM Sent: 2310
+3357
+WSM Sent: 2310
+231
+WSM Sent: 2310
+1353
+WSM Sent: 2310
+3201
+WSM Sent: 2310
+195
+WSM Sent: 2310
+4497
+WSM Sent: 2310
+2325
+WSM Sent: 2310
+4383
+WSM Sent: 2310
+3933
+WSM Sent: 2310
+2265
+WSM Sent: 2310
+3555
+WSM Sent: 2310
+855
+WSM Sent: 2310
+4731
+WSM Sent: 2310
+1083
+WSM Sent: 2310
+3723
+WSM Sent: 2310
+4329
+WSM Sent: 2310
+3363
+WSM Sent: 2310
+3105
+WSM Sent: 2310
+1791
+WSM Sent: 2310
+4419
+WSM Sent: 2310
+2541
+WSM Sent: 2310
+3615
+WSM Sent: 2310
+1431
+WSM Sent: 2310
+3585
+WSM Sent: 2310
+2709
+WSM Sent: 2310
+4965
+WSM Sent: 2310
+5307
+WSM Sent: 2310
+5361
+WSM Sent: 2310
+1899
+WSM Sent: 2310
+2811
+WSM Sent: 2310
+1413
+WSM Sent: 2310
+1467
+WSM Sent: 2310
+3435
+WSM Sent: 2310
+4101
+WSM Sent: 2310
+1035
+WSM Sent: 2310
+3015
+WSM Sent: 2310
+741
+WSM Sent: 2310
+1143
+WSM Sent: 2310
+3207
+WSM Sent: 2310
+1359
+WSM Sent: 2310
+63
+WSM Sent: 2310
+915
+WSM Sent: 2310
+2049
+WSM Sent: 2310
+4893
+WSM Sent: 2310
+2133
+WSM Sent: 2310
+2397
+WSM Sent: 2310
+5343
+WSM Sent: 2310
+3327
+WSM Sent: 2310
+4773
+WSM Sent: 2310
+1839
+WSM Sent: 2310
+765
+WSM Sent: 2310
+3819
+WSM Sent: 2310
+2211
+WSM Sent: 2310
+3879
+WSM Sent: 2310
+2421
+WSM Sent: 2310
+4923
+WSM Sent: 2310
+4065
+WSM Sent: 2310
+4173
+WSM Sent: 2310
+2667
+WSM Sent: 2310
+2451
+WSM Sent: 2310
+4389
+WSM Sent: 2310
+3111
+WSM Sent: 2310
+3369
+WSM Sent: 2310
+1653
+WSM Sent: 2310
+747
+WSM Sent: 2310
+3591
+WSM Sent: 2310
+3621
+WSM Sent: 2310
+1209
+WSM Sent: 2310
+4857
+WSM Sent: 2310
+717
+WSM Sent: 2310
+4233
+WSM Sent: 2310
+5133
+WSM Sent: 2310
+4425
+WSM Sent: 2310
+5079
+WSM Sent: 2310
+2673
+WSM Sent: 2310
+4047
+WSM Sent: 2310
+5283
+WSM Sent: 2310
+3441
+WSM Sent: 2310
+771
+WSM Sent: 2310
+4395
+WSM Sent: 2310
+3741
+WSM Sent: 2310
+2271
+WSM Sent: 2310
+1179
+WSM Sent: 2310
+2913
+WSM Sent: 2310
+1149
+WSM Sent: 2310
+555
+WSM Sent: 2310
+2109
+WSM Sent: 2310
+501
+WSM Sent: 2310
+3117
+WSM Sent: 2310
+1287
+WSM Sent: 2310
+3681
+WSM Sent: 2310
+3417
+WSM Sent: 2310
+2361
+WSM Sent: 2310
+1329
+WSM Sent: 2310
+1665
+WSM Sent: 2310
+3087
+WSM Sent: 2310
+831
+WSM Sent: 2310
+1065
+WSM Sent: 2310
+633
+WSM Sent: 2310
+5091
+WSM Sent: 2310
+2163
+WSM Sent: 2310
+957
+WSM Sent: 2310
+3921
+WSM Sent: 2310
+2877
+WSM Sent: 2310
+5319
+WSM Sent: 2310
+129
+WSM Sent: 2310
+4509
+WSM Sent: 2310
+5223
+WSM Sent: 2310
+5031
+WSM Sent: 2310
+1155
+WSM Sent: 2310
+3399
+WSM Sent: 2310
+4683
+WSM Sent: 2310
+3165
+WSM Sent: 2310
+3981
+WSM Sent: 2310
+2853
+WSM Sent: 2310
+3057
+WSM Sent: 2310
+3123
+WSM Sent: 2310
+2757
+WSM Sent: 2310
+837
+WSM Sent: 2310
+2829
+WSM Sent: 2310
+615
+WSM Sent: 2310
+4473
+WSM Sent: 2310
+5145
+WSM Sent: 2310
+1599
+WSM Sent: 2310
+1269
+WSM Sent: 2310
+1419
+WSM Sent: 2310
+2589
+WSM Sent: 2310
+2307
+WSM Sent: 2310
+1119
+WSM Sent: 2310
+2559
+WSM Sent: 2310
+4929
+WSM Sent: 2310
+3531
+WSM Sent: 2310
+729
+WSM Sent: 2310
+5367
+WSM Sent: 2310
+4575
+WSM Sent: 2310
+2277
+WSM Sent: 2310
+2331
+WSM Sent: 2310
+387
+WSM Sent: 2310
+5409
+WSM Sent: 2310
+963
+WSM Sent: 2310
+5289
+WSM Sent: 2310
+1725
+WSM Sent: 2310
+573
+WSM Sent: 2310
+2079
+WSM Sent: 2310
+2373
+WSM Sent: 2310
+3657
+WSM Sent: 2310
+2571
+WSM Sent: 2310
+2925
+WSM Sent: 2310
+2493
+WSM Sent: 2310
+4713
+WSM Sent: 2310
+843
+WSM Sent: 2310
+3537
+WSM Sent: 2310
+3753
+WSM Sent: 2310
+2193
+WSM Sent: 2310
+4245
+WSM Sent: 2310
+3033
+WSM Sent: 2310
+3633
+WSM Sent: 2310
+3573
+WSM Sent: 2310
+2085
+WSM Sent: 2310
+3063
+WSM Sent: 2310
+969
+WSM Sent: 2310
+5007
+WSM Sent: 2310
+5193
+WSM Sent: 2310
+993
+WSM Sent: 2310
+3927
+WSM Sent: 2310
+4125
+WSM Sent: 2310
+5121
+WSM Sent: 2310
+3039
+WSM Sent: 2310
+3831
+WSM Sent: 2310
+357
+WSM Sent: 2310
+1575
+WSM Sent: 2310
+897
+WSM Sent: 2310
+1485
+WSM Sent: 2310
+2835
+WSM Sent: 2310
+4347
+WSM Sent: 2310
+3597
+WSM Sent: 2310
+4029
+WSM Sent: 2310
+1251
+WSM Sent: 2310
+1695
+WSM Sent: 2310
+3951
+WSM Sent: 2310
+4911
+WSM Sent: 2310
+4617
+WSM Sent: 2310
+3855
+WSM Sent: 2310
+2199
+WSM Sent: 2310
+1785
+WSM Sent: 2310
+507
+WSM Sent: 2310
+507
+WSM Sent: 2310
+3639
+WSM Sent: 2310
+3519
+WSM Sent: 2310
+3489
+WSM Sent: 2310
+4185
+WSM Sent: 2310
+1911
+WSM Sent: 2310
+2223
+WSM Sent: 2310
+3345
+WSM Sent: 2310
+4545
+WSM Sent: 2310
+2859
+WSM Sent: 2310
+2727
+WSM Sent: 2310
+4869
+WSM Sent: 2310
+4035
+WSM Sent: 2310
+4311
+WSM Sent: 2310
+4275
+WSM Sent: 2310
+2895
+WSM Sent: 2310
+2313
+WSM Sent: 2310
+4935
+WSM Sent: 2310
+5271
+WSM Sent: 2310
+3909
+WSM Sent: 2310
+5241
+WSM Sent: 2310
+5295
+WSM Sent: 2310
+4083
+WSM Sent: 2310
+4131
+WSM Sent: 2310
+5157
+WSM Sent: 2310
+3789
+WSM Sent: 2310
+WSM Received: 863
+{-1, -1, 100, 100, 100, 100, },
+{100, -1, 100, 100, 100, 100, },
+{100, -1, -1, 100, 100, 100, },
+{100, -1, -1, 100, 100, 100, },
+{100, -1, 100, 100, 100, 100, },
+{100, -1, -1, 100, 100, 100, },
+-0.95, 7.18097, 103.325, 0, 0, 0, 
+0, -0.578979, 0, 0, 0, 0, 
+0, 2.39594, 4.05216, 0, 0, 0, 
+0, 4.0375, 75.3478, 0, 0, 0, 
+0, 3.79763, 171.31, 0, 0, 0, 
+0, -0.76, 75.3478, 0, 0, 0, 
+QHigh:
+
+QLow:
+
+
+End.
